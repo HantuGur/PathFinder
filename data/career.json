@@ -25,11 +25,161 @@
       "growth_score": 95,
       "happiness_score": 82
     },
+    "sistem_informasi": {
+      "nama": "Sistem Informasi",
+      "fakultas": "Ilmu Komputer / Teknologi Informasi",
+      "emoji": "🖧",
+      "warna": "#4F46E5",
+      "deskripsi": "Menggabungkan teknologi dan bisnis — bagaimana sistem IT membantu organisasi bekerja lebih efisien dan mengambil keputusan berbasis data.",
+      "cocok_untuk": ["Suka teknologi tapi juga tertarik bisnis", "Pandai komunikasi dan analisis", "Ingin jadi jembatan antara IT dan manajemen"],
+      "prospek_kerja": [
+        {"posisi": "Business Analyst", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"},
+        {"posisi": "IT Project Manager", "gaji_junior": "10-16 jt", "gaji_senior": "25-50 jt", "demand": "Tinggi"},
+        {"posisi": "System Analyst", "gaji_junior": "8-14 jt", "gaji_senior": "22-45 jt", "demand": "Tinggi"},
+        {"posisi": "ERP Consultant", "gaji_junior": "9-15 jt", "gaji_senior": "25-55 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "ITS", "BINUS", "Telkom University", "UGM", "UNPAD"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar pemrograman, basis data, analisis sistem, jaringan komputer"},
+        {"tahap": "Tahun 3", "fokus": "Manajemen proyek IT, ERP, keamanan sistem, e-business"},
+        {"tahap": "Tahun 4", "fokus": "Magang di perusahaan / konsultan IT, skripsi implementasi sistem"},
+        {"tahap": "Setelah Lulus", "fokus": "IT Analyst → Project Manager → CTO / IT Director"}
+      ],
+      "skill_utama": ["SQL", "SAP/ERP", "Project Management", "Data Analysis", "Business Process"],
+      "rata_gaji_awal": 9,
+      "growth_score": 88,
+      "happiness_score": 80
+    },
+    "teknik_elektro": {
+      "nama": "Teknik Elektro",
+      "fakultas": "Teknik",
+      "emoji": "⚡",
+      "warna": "#F59E0B",
+      "deskripsi": "Mempelajari sistem kelistrikan, elektronika, telekomunikasi, dan kendali. Dari pembangkit listrik hingga chip komputer dan robotika.",
+      "cocok_untuk": ["Suka fisika dan matematika", "Tertarik elektronika dan rangkaian listrik", "Ingin berkontribusi ke infrastruktur energi dan teknologi"],
+      "prospek_kerja": [
+        {"posisi": "Electrical Engineer", "gaji_junior": "7-14 jt", "gaji_senior": "22-50 jt", "demand": "Tinggi"},
+        {"posisi": "Telecom Engineer", "gaji_junior": "8-14 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"},
+        {"posisi": "Embedded Systems Engineer", "gaji_junior": "9-15 jt", "gaji_senior": "25-55 jt", "demand": "Tinggi"},
+        {"posisi": "Power Systems Engineer", "gaji_junior": "8-15 jt", "gaji_senior": "25-55 jt", "demand": "Sangat Tinggi"}
+      ],
+      "universitas_top": ["ITB", "UI", "ITS", "UGM", "Universitas Brawijaya", "UNDIP"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Matematika teknik, fisika, rangkaian listrik, elektronika dasar"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: tenaga listrik / telekomunikasi / kontrol / elektronika"},
+        {"tahap": "Tahun 4", "fokus": "Proyek tugas akhir, magang di PLN / Telkom / manufaktur"},
+        {"tahap": "Setelah Lulus", "fokus": "Junior Engineer → Senior → Engineering Manager / Konsultan"}
+      ],
+      "skill_utama": ["MATLAB", "AutoCAD Electrical", "PLC", "VHDL", "Circuit Design"],
+      "rata_gaji_awal": 10,
+      "growth_score": 82,
+      "happiness_score": 75
+    },
+    "teknik_mesin": {
+      "nama": "Teknik Mesin",
+      "fakultas": "Teknik",
+      "emoji": "⚙️",
+      "warna": "#64748B",
+      "deskripsi": "Mempelajari perancangan, analisis, dan manufaktur sistem mekanikal — dari mesin industri hingga kendaraan, pesawat, dan robot.",
+      "cocok_untuk": ["Suka bongkar dan rakit mesin", "Tertarik fisika mekanika dan material", "Ingin kerja di industri manufaktur atau otomotif"],
+      "prospek_kerja": [
+        {"posisi": "Mechanical Engineer", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"},
+        {"posisi": "Manufacturing Engineer", "gaji_junior": "7-12 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"},
+        {"posisi": "Automotive Engineer", "gaji_junior": "8-14 jt", "gaji_senior": "22-50 jt", "demand": "Tinggi"},
+        {"posisi": "R&D Engineer", "gaji_junior": "9-15 jt", "gaji_senior": "25-55 jt", "demand": "Sedang"}
+      ],
+      "universitas_top": ["ITB", "UI", "ITS", "UGM", "Universitas Brawijaya", "UNDIP"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Matematika, fisika, statika, dinamika, termodinamika"},
+        {"tahap": "Tahun 3", "fokus": "Manufaktur, desain mesin, material, CAD/CAM"},
+        {"tahap": "Tahun 4", "fokus": "Tugas akhir perancangan, magang di industri otomotif/manufaktur"},
+        {"tahap": "Setelah Lulus", "fokus": "Junior Engineer → Senior → Plant Manager / Technical Director"}
+      ],
+      "skill_utama": ["AutoCAD", "SolidWorks", "MATLAB", "FEM Analysis", "CNC Programming"],
+      "rata_gaji_awal": 9,
+      "growth_score": 75,
+      "happiness_score": 74
+    },
+    "teknik_sipil": {
+      "nama": "Teknik Sipil",
+      "fakultas": "Teknik",
+      "emoji": "🏗️",
+      "warna": "#78716C",
+      "deskripsi": "Merancang dan membangun infrastruktur: gedung, jembatan, jalan, bendungan, dan sistem sanitasi yang jadi tulang punggung peradaban.",
+      "cocok_untuk": ["Suka matematika dan fisika terapan", "Ingin lihat hasil kerja secara nyata dan fisik", "Tertarik pembangunan dan infrastruktur negara"],
+      "prospek_kerja": [
+        {"posisi": "Civil Engineer", "gaji_junior": "6-12 jt", "gaji_senior": "20-45 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Structural Engineer", "gaji_junior": "7-13 jt", "gaji_senior": "22-50 jt", "demand": "Tinggi"},
+        {"posisi": "Project Manager Konstruksi", "gaji_junior": "10-18 jt", "gaji_senior": "30-70 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Quantity Surveyor", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["ITB", "UI", "ITS", "UGM", "UNDIP", "Universitas Brawijaya"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Mekanika teknik, matematika, material bangunan, gambar teknik"},
+        {"tahap": "Tahun 3", "fokus": "Struktur bangunan, geoteknik, hidraulika, transportasi"},
+        {"tahap": "Tahun 4", "fokus": "Tugas akhir, magang di kontraktor / konsultan / pemerintah"},
+        {"tahap": "Setelah Lulus", "fokus": "Site Engineer → Project Engineer → Project Manager / Konsultan"}
+      ],
+      "skill_utama": ["AutoCAD", "SAP2000", "Revit", "MS Project", "Estimasi Biaya"],
+      "rata_gaji_awal": 8,
+      "growth_score": 80,
+      "happiness_score": 76
+    },
+    "teknik_kimia": {
+      "nama": "Teknik Kimia",
+      "fakultas": "Teknik",
+      "emoji": "🧪",
+      "warna": "#10B981",
+      "deskripsi": "Menerapkan prinsip kimia dan fisika untuk merancang proses industri — dari produksi BBM, obat-obatan, pupuk, hingga bahan pangan.",
+      "cocok_untuk": ["Suka kimia dan biologi", "Tertarik industri proses dan manufaktur", "Suka eksperimen dan riset terapan"],
+      "prospek_kerja": [
+        {"posisi": "Process Engineer", "gaji_junior": "8-15 jt", "gaji_senior": "25-55 jt", "demand": "Tinggi"},
+        {"posisi": "Quality Control Engineer", "gaji_junior": "6-12 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"},
+        {"posisi": "Production Engineer", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"},
+        {"posisi": "HSE Engineer", "gaji_junior": "7-14 jt", "gaji_senior": "22-50 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["ITB", "UI", "ITS", "UGM", "UNDIP", "Universitas Brawijaya"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Kimia dasar, termodinamika, perpindahan massa dan panas"},
+        {"tahap": "Tahun 3", "fokus": "Perancangan proses, reaktor kimia, pengendalian proses"},
+        {"tahap": "Tahun 4", "fokus": "Tugas akhir desain pabrik, magang di industri migas/petrokimia"},
+        {"tahap": "Setelah Lulus", "fokus": "Process Engineer → Senior → Plant Manager / Konsultan"}
+      ],
+      "skill_utama": ["ASPEN Plus", "HYSYS", "AutoCAD P&ID", "Lab Analysis", "Process Simulation"],
+      "rata_gaji_awal": 10,
+      "growth_score": 78,
+      "happiness_score": 72
+    },
+    "arsitektur": {
+      "nama": "Arsitektur",
+      "fakultas": "Teknik / Seni & Desain",
+      "emoji": "🏛️",
+      "warna": "#D97706",
+      "deskripsi": "Memadukan seni, sains, dan teknologi untuk merancang ruang dan bangunan yang fungsional, estetis, dan berkelanjutan.",
+      "cocok_untuk": ["Jiwa seni tinggi tapi juga suka sains", "Suka menggambar dan visualisasi 3D", "Perhatian pada detail estetika dan fungsi ruang"],
+      "prospek_kerja": [
+        {"posisi": "Arsitek", "gaji_junior": "6-12 jt", "gaji_senior": "20-60 jt", "demand": "Tinggi"},
+        {"posisi": "Interior Designer", "gaji_junior": "6-11 jt", "gaji_senior": "18-45 jt", "demand": "Tinggi"},
+        {"posisi": "Urban Planner", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Sedang"},
+        {"posisi": "BIM Specialist", "gaji_junior": "8-14 jt", "gaji_senior": "22-48 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["ITB", "UI", "ITS", "UNPAR", "Trisakti", "UGM"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Desain dasar, gambar teknik, struktur, sejarah arsitektur"},
+        {"tahap": "Tahun 3-4", "fokus": "Studio desain kompleks, teknologi bangunan, perencanaan kota"},
+        {"tahap": "Profesi", "fokus": "Program profesi arsitek 1 tahun untuk mendapat sertifikasi IAI"},
+        {"tahap": "Setelah Lulus", "fokus": "Junior Arsitek → Senior → Principal / Buka firma sendiri"}
+      ],
+      "skill_utama": ["AutoCAD", "SketchUp", "Revit", "3ds Max", "Photoshop"],
+      "rata_gaji_awal": 8,
+      "growth_score": 74,
+      "happiness_score": 82
+    },
     "desain_komunikasi_visual": {
       "nama": "Desain Komunikasi Visual",
       "fakultas": "Seni & Desain",
       "emoji": "🎨",
-      "warna": "#F59E0B",
+      "warna": "#EC4899",
       "deskripsi": "Menggabungkan seni, kreativitas, dan komunikasi untuk menciptakan visual yang bermakna — dari branding hingga UI/UX digital.",
       "cocok_untuk": ["Punya jiwa seni dan estetika tinggi", "Suka bercerita lewat gambar", "Kreatif dan imajinatif", "Peduli detail visual"],
       "prospek_kerja": [
@@ -50,55 +200,30 @@
       "growth_score": 80,
       "happiness_score": 88
     },
-    "psikologi": {
-      "nama": "Psikologi",
-      "fakultas": "Psikologi",
-      "emoji": "🧠",
-      "warna": "#8B5CF6",
-      "deskripsi": "Mempelajari perilaku manusia, mental, emosi, dan interaksi sosial. Ilmu yang semakin relevan di era modern yang penuh tekanan.",
-      "cocok_untuk": ["Empati tinggi dan suka mendengarkan", "Penasaran dengan cara kerja pikiran manusia", "Suka menganalisis perilaku orang", "Ingin membantu orang lain"],
+    "seni_rupa": {
+      "nama": "Seni Rupa",
+      "fakultas": "Seni & Desain",
+      "emoji": "🖌️",
+      "warna": "#F97316",
+      "deskripsi": "Mengeksplorasi ekspresi artistik melalui lukisan, patung, instalasi, dan seni kontemporer. Mengembangkan identitas visual unik sebagai seniman.",
+      "cocok_untuk": ["Jiwa bebas dan sangat ekspresif", "Ingin berkarir sebagai seniman profesional", "Tertarik seni kontemporer dan dunia galeri"],
       "prospek_kerja": [
-        {"posisi": "Psikolog Klinis", "gaji_junior": "6-12 jt", "gaji_senior": "20-50 jt", "demand": "Tinggi"},
-        {"posisi": "HR & Talent Manager", "gaji_junior": "7-13 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
-        {"posisi": "UX Researcher", "gaji_junior": "8-14 jt", "gaji_senior": "22-45 jt", "demand": "Sangat Tinggi"},
-        {"posisi": "Konselor / Coach", "gaji_junior": "5-10 jt", "gaji_senior": "15-40 jt", "demand": "Tinggi"}
+        {"posisi": "Seniman / Fine Artist", "gaji_junior": "Variabel", "gaji_senior": "Tidak terbatas", "demand": "Sedang"},
+        {"posisi": "Art Director", "gaji_junior": "8-14 jt", "gaji_senior": "25-55 jt", "demand": "Sedang"},
+        {"posisi": "Ilustrator", "gaji_junior": "5-10 jt", "gaji_senior": "15-40 jt", "demand": "Tinggi"},
+        {"posisi": "Dosen / Pengajar Seni", "gaji_junior": "5-10 jt", "gaji_senior": "12-25 jt", "demand": "Sedang"}
       ],
-      "universitas_top": ["UI", "UGM", "UNPAD", "Atmajaya", "Universitas Airlangga"],
+      "universitas_top": ["ITB", "IKJ", "ISI Yogyakarta", "ISI Denpasar", "UNJ"],
       "roadmap": [
-        {"tahap": "Tahun 1-2", "fokus": "Dasar psikologi, statistik, metodologi penelitian"},
-        {"tahap": "Tahun 3", "fokus": "Spesialisasi: klinis, industri, pendidikan, atau sosial"},
-        {"tahap": "Tahun 4", "fokus": "Praktikum, magang, skripsi penelitian"},
-        {"tahap": "Setelah Lulus", "fokus": "S2 Profesi (wajib untuk psikolog) atau karir HR/researcher"}
+        {"tahap": "Tahun 1-2", "fokus": "Teknik dasar melukis, menggambar, sejarah seni, estetika"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi medium: lukis, patung, grafis, seni media baru"},
+        {"tahap": "Tahun 4", "fokus": "Pameran tugas akhir, membangun identitas artistik personal"},
+        {"tahap": "Setelah Lulus", "fokus": "Residensi seniman → Pameran → Galeri / Pengajar / Freelance"}
       ],
-      "skill_utama": ["Konseling", "Asesmen Psikologi", "Riset", "Komunikasi", "Empati"],
-      "rata_gaji_awal": 8,
-      "growth_score": 75,
+      "skill_utama": ["Drawing", "Painting", "Sculpture", "Digital Art", "Art Critique"],
+      "rata_gaji_awal": 6,
+      "growth_score": 60,
       "happiness_score": 90
-    },
-    "bisnis_manajemen": {
-      "nama": "Manajemen Bisnis",
-      "fakultas": "Ekonomi & Bisnis",
-      "emoji": "📈",
-      "warna": "#10B981",
-      "deskripsi": "Mempelajari cara mengelola organisasi, strategi bisnis, pemasaran, keuangan, dan kepemimpinan untuk menciptakan nilai di dunia bisnis.",
-      "cocok_untuk": ["Jiwa pemimpin dan suka mengorganisir", "Tertarik dunia bisnis dan entrepreneurship", "Pandai komunikasi dan negosiasi", "Berpikir strategis dan big picture"],
-      "prospek_kerja": [
-        {"posisi": "Business Analyst", "gaji_junior": "7-13 jt", "gaji_senior": "22-45 jt", "demand": "Tinggi"},
-        {"posisi": "Product Manager", "gaji_junior": "10-18 jt", "gaji_senior": "30-65 jt", "demand": "Sangat Tinggi"},
-        {"posisi": "Marketing Manager", "gaji_junior": "7-12 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
-        {"posisi": "Entrepreneur / Founder", "gaji_junior": "Variabel", "gaji_senior": "Tidak terbatas", "demand": "Tinggi"}
-      ],
-      "universitas_top": ["UI", "UGM", "UNPAD", "Prasetiya Mulya", "PPM", "BINUS"],
-      "roadmap": [
-        {"tahap": "Tahun 1-2", "fokus": "Dasar manajemen, akuntansi, ekonomi mikro/makro, statistik"},
-        {"tahap": "Tahun 3", "fokus": "Spesialisasi: marketing, keuangan, SDM, atau operations"},
-        {"tahap": "Tahun 4", "fokus": "Magang di perusahaan / mulai bisnis sendiri, skripsi"},
-        {"tahap": "Setelah Lulus", "fokus": "Management trainee → Manager → Director / Entrepreneur"}
-      ],
-      "skill_utama": ["Leadership", "Strategi Bisnis", "Financial Modeling", "Marketing", "Negosiasi"],
-      "rata_gaji_awal": 9,
-      "growth_score": 82,
-      "happiness_score": 78
     },
     "kedokteran": {
       "nama": "Kedokteran",
@@ -117,13 +242,213 @@
       "roadmap": [
         {"tahap": "Tahun 1-3", "fokus": "Pre-klinik: anatomi, fisiologi, biokimia, patologi"},
         {"tahap": "Tahun 4-6", "fokus": "Klinik: rotasi di berbagai departemen RS"},
-        {"tahap": "Koas & Internship", "fokus": "Praktik langsung, ujian kompetensi (UKMPPD)"},
-        {"tahap": "Setelah Lulus", "fokus": "Dokter umum → Spesialisasi (3-5 tahun) → Subspesialis"}
+        {"tahap": "Koas & Internship", "fokus": "Praktik langsung, ujian kompetensi UKMPPD"},
+        {"tahap": "Setelah Lulus", "fokus": "Dokter umum → Spesialisasi 3-5 tahun → Subspesialis"}
       ],
       "skill_utama": ["Diagnosis Klinis", "Komunikasi Pasien", "Ilmu Sains", "Empati", "Ketelitian"],
       "rata_gaji_awal": 14,
       "growth_score": 90,
       "happiness_score": 85
+    },
+    "kedokteran_gigi": {
+      "nama": "Kedokteran Gigi",
+      "fakultas": "Kedokteran Gigi",
+      "emoji": "🦷",
+      "warna": "#06B6D4",
+      "deskripsi": "Mendidik dokter gigi profesional yang mampu mendiagnosis, mencegah, dan merawat masalah kesehatan gigi dan mulut.",
+      "cocok_untuk": ["Teliti dan punya tangan yang terampil", "Empati dan sabar dengan pasien", "Suka ilmu sains kesehatan"],
+      "prospek_kerja": [
+        {"posisi": "Dokter Gigi Umum", "gaji_junior": "8-18 jt", "gaji_senior": "25-60 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Dokter Gigi Spesialis", "gaji_junior": "20-40 jt", "gaji_senior": "50-150 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Dental Clinic Owner", "gaji_junior": "20-40 jt", "gaji_senior": "Tidak terbatas", "demand": "Tinggi"},
+        {"posisi": "Peneliti Dental", "gaji_junior": "8-14 jt", "gaji_senior": "20-45 jt", "demand": "Sedang"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Universitas Airlangga", "UNDIP"],
+      "roadmap": [
+        {"tahap": "Tahun 1-3", "fokus": "Pre-klinik: anatomi, histologi, ilmu material kedokteran gigi"},
+        {"tahap": "Tahun 4-5", "fokus": "Klinik: praktik di RSGM, semua bidang spesialisasi"},
+        {"tahap": "Internship", "fokus": "1 tahun internship di puskesmas/RS, ujian kompetensi UKDGI"},
+        {"tahap": "Setelah Lulus", "fokus": "Dokter gigi umum → Buka klinik atau ambil spesialisasi"}
+      ],
+      "skill_utama": ["Clinical Skill", "Dental Radiology", "Komunikasi Pasien", "Ketelitian Manual", "Anestesi Lokal"],
+      "rata_gaji_awal": 12,
+      "growth_score": 88,
+      "happiness_score": 84
+    },
+    "farmasi": {
+      "nama": "Farmasi",
+      "fakultas": "Farmasi",
+      "emoji": "💊",
+      "warna": "#0891B2",
+      "deskripsi": "Mempelajari ilmu obat-obatan: mulai dari sintesis senyawa, formulasi, hingga pelayanan kefarmasian kepada pasien dan masyarakat.",
+      "cocok_untuk": ["Suka kimia dan biologi", "Teliti dan berorientasi detail", "Ingin berkontribusi di bidang kesehatan"],
+      "prospek_kerja": [
+        {"posisi": "Apoteker", "gaji_junior": "6-12 jt", "gaji_senior": "18-40 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Medical Representative", "gaji_junior": "6-11 jt", "gaji_senior": "15-35 jt", "demand": "Tinggi"},
+        {"posisi": "Quality Control Farmasi", "gaji_junior": "6-11 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"},
+        {"posisi": "R&D Farmasi", "gaji_junior": "8-14 jt", "gaji_senior": "22-50 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "ITB", "Universitas Airlangga", "UNPAD"],
+      "roadmap": [
+        {"tahap": "Tahun 1-3", "fokus": "Kimia farmasi, farmakologi, biokimia, farmasetika"},
+        {"tahap": "Tahun 4", "fokus": "Praktikum intensif, farmasi klinik, teknologi sediaan"},
+        {"tahap": "Profesi Apoteker", "fokus": "Program profesi 1 tahun + UKAI untuk menjadi apoteker"},
+        {"tahap": "Setelah Lulus", "fokus": "Apoteker RS/apotek → Manajer → Direktur Farmasi / R&D"}
+      ],
+      "skill_utama": ["Kimia Analitik", "Farmakokinetik", "GMP", "Konseling Obat", "Lab Analysis"],
+      "rata_gaji_awal": 8,
+      "growth_score": 82,
+      "happiness_score": 78
+    },
+    "keperawatan": {
+      "nama": "Keperawatan",
+      "fakultas": "Kesehatan / Keperawatan",
+      "emoji": "🩺",
+      "warna": "#14B8A6",
+      "deskripsi": "Mendidik perawat profesional yang mampu memberikan asuhan keperawatan berkualitas, berempati, dan berbasis evidence.",
+      "cocok_untuk": ["Empati tinggi dan suka merawat orang", "Tahan tekanan fisik dan emosional", "Ingin kerja langsung dengan pasien"],
+      "prospek_kerja": [
+        {"posisi": "Perawat RS", "gaji_junior": "4-8 jt", "gaji_senior": "10-25 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Perawat Luar Negeri", "gaji_junior": "20-50 jt", "gaji_senior": "50-120 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Nurse Educator", "gaji_junior": "6-12 jt", "gaji_senior": "15-30 jt", "demand": "Tinggi"},
+        {"posisi": "Manajer Keperawatan", "gaji_junior": "10-18 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "Universitas Airlangga", "UNPAD", "UNHAS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-3", "fokus": "Anatomi, fisiologi, asuhan keperawatan, patologi"},
+        {"tahap": "Tahun 4", "fokus": "Praktik klinik intensif di RS, puskesmas, komunitas"},
+        {"tahap": "Profesi Ners", "fokus": "Program profesi 1 tahun untuk gelar Ns."},
+        {"tahap": "Setelah Lulus", "fokus": "Perawat → Charge Nurse → Kepala Ruangan / Direktur Keperawatan"}
+      ],
+      "skill_utama": ["Asuhan Keperawatan", "BLS/ACLS", "Komunikasi Terapeutik", "Clinical Assessment"],
+      "rata_gaji_awal": 6,
+      "growth_score": 78,
+      "happiness_score": 83
+    },
+    "gizi": {
+      "nama": "Ilmu Gizi",
+      "fakultas": "Kesehatan Masyarakat",
+      "emoji": "🥗",
+      "warna": "#84CC16",
+      "deskripsi": "Mempelajari hubungan antara makanan, nutrisi, dan kesehatan manusia — dari konseling diet hingga kebijakan pangan nasional.",
+      "cocok_untuk": ["Suka sains biologi dan kimia", "Peduli kesehatan dan gaya hidup sehat", "Ingin membantu orang melalui nutrisi"],
+      "prospek_kerja": [
+        {"posisi": "Ahli Gizi / Dietisien", "gaji_junior": "5-9 jt", "gaji_senior": "12-28 jt", "demand": "Tinggi"},
+        {"posisi": "Food Scientist", "gaji_junior": "6-11 jt", "gaji_senior": "15-35 jt", "demand": "Tinggi"},
+        {"posisi": "Nutrition Consultant", "gaji_junior": "6-12 jt", "gaji_senior": "15-40 jt", "demand": "Tinggi"},
+        {"posisi": "R&D Food Industry", "gaji_junior": "7-12 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "IPB", "UGM", "Universitas Airlangga", "UNHAS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Biokimia gizi, fisiologi, ilmu pangan, epidemiologi"},
+        {"tahap": "Tahun 3", "fokus": "Dietetika klinik, gizi masyarakat, penilaian status gizi"},
+        {"tahap": "Tahun 4", "fokus": "PKL di RS/puskesmas, skripsi penelitian gizi"},
+        {"tahap": "Setelah Lulus", "fokus": "Dietisien RS → Konsultan → Program Manager / Akademisi"}
+      ],
+      "skill_utama": ["Nutritional Assessment", "Diet Planning", "Food Analysis", "Konseling Gizi", "SPSS"],
+      "rata_gaji_awal": 7,
+      "growth_score": 72,
+      "happiness_score": 82
+    },
+    "psikologi": {
+      "nama": "Psikologi",
+      "fakultas": "Psikologi",
+      "emoji": "🧠",
+      "warna": "#8B5CF6",
+      "deskripsi": "Mempelajari perilaku manusia, mental, emosi, dan interaksi sosial. Ilmu yang semakin relevan di era modern yang penuh tekanan.",
+      "cocok_untuk": ["Empati tinggi dan suka mendengarkan", "Penasaran dengan cara kerja pikiran manusia", "Suka menganalisis perilaku orang"],
+      "prospek_kerja": [
+        {"posisi": "Psikolog Klinis", "gaji_junior": "6-12 jt", "gaji_senior": "20-50 jt", "demand": "Tinggi"},
+        {"posisi": "HR & Talent Manager", "gaji_junior": "7-13 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
+        {"posisi": "UX Researcher", "gaji_junior": "8-14 jt", "gaji_senior": "22-45 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Konselor / Coach", "gaji_junior": "5-10 jt", "gaji_senior": "15-40 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Atmajaya", "Universitas Airlangga"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar psikologi, statistik, metodologi penelitian"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: klinis, industri, pendidikan, atau sosial"},
+        {"tahap": "Tahun 4", "fokus": "Praktikum, magang, skripsi penelitian"},
+        {"tahap": "Setelah Lulus", "fokus": "S2 Profesi wajib untuk psikolog atau karir HR/researcher"}
+      ],
+      "skill_utama": ["Konseling", "Asesmen Psikologi", "Riset", "Komunikasi", "Empati"],
+      "rata_gaji_awal": 8,
+      "growth_score": 75,
+      "happiness_score": 90
+    },
+    "bisnis_manajemen": {
+      "nama": "Manajemen Bisnis",
+      "fakultas": "Ekonomi & Bisnis",
+      "emoji": "📈",
+      "warna": "#10B981",
+      "deskripsi": "Mempelajari cara mengelola organisasi, strategi bisnis, pemasaran, keuangan, dan kepemimpinan untuk menciptakan nilai di dunia bisnis.",
+      "cocok_untuk": ["Jiwa pemimpin dan suka mengorganisir", "Tertarik dunia bisnis dan entrepreneurship", "Pandai komunikasi dan negosiasi"],
+      "prospek_kerja": [
+        {"posisi": "Business Analyst", "gaji_junior": "7-13 jt", "gaji_senior": "22-45 jt", "demand": "Tinggi"},
+        {"posisi": "Product Manager", "gaji_junior": "10-18 jt", "gaji_senior": "30-65 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Marketing Manager", "gaji_junior": "7-12 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
+        {"posisi": "Entrepreneur / Founder", "gaji_junior": "Variabel", "gaji_senior": "Tidak terbatas", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Prasetiya Mulya", "PPM", "BINUS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar manajemen, akuntansi, ekonomi mikro/makro, statistik"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: marketing, keuangan, SDM, atau operations"},
+        {"tahap": "Tahun 4", "fokus": "Magang di perusahaan / mulai bisnis sendiri, skripsi"},
+        {"tahap": "Setelah Lulus", "fokus": "Management trainee → Manager → Director / Entrepreneur"}
+      ],
+      "skill_utama": ["Leadership", "Strategi Bisnis", "Financial Modeling", "Marketing", "Negosiasi"],
+      "rata_gaji_awal": 9,
+      "growth_score": 82,
+      "happiness_score": 78
+    },
+    "akuntansi": {
+      "nama": "Akuntansi",
+      "fakultas": "Ekonomi & Bisnis",
+      "emoji": "🧾",
+      "warna": "#0EA5E9",
+      "deskripsi": "Mempelajari pencatatan, analisis, dan pelaporan keuangan. Akuntansi adalah bahasa bisnis — semua perusahaan butuh akuntan.",
+      "cocok_untuk": ["Teliti dan suka angka", "Disiplin dan sistematis", "Tertarik keuangan dan perpajakan"],
+      "prospek_kerja": [
+        {"posisi": "Akuntan Publik", "gaji_junior": "6-12 jt", "gaji_senior": "25-70 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Financial Analyst", "gaji_junior": "7-13 jt", "gaji_senior": "22-50 jt", "demand": "Tinggi"},
+        {"posisi": "Tax Consultant", "gaji_junior": "6-12 jt", "gaji_senior": "20-55 jt", "demand": "Tinggi"},
+        {"posisi": "CFO / Finance Director", "gaji_junior": "15-25 jt", "gaji_senior": "50-150 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Universitas Airlangga", "UNDIP", "BINUS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Akuntansi keuangan, perpajakan dasar, pengantar bisnis"},
+        {"tahap": "Tahun 3", "fokus": "Audit, akuntansi manajemen, sistem informasi akuntansi"},
+        {"tahap": "Tahun 4", "fokus": "Magang di KAP / perusahaan, skripsi, persiapan CPA"},
+        {"tahap": "Setelah Lulus", "fokus": "Staff akuntan → Senior → Manager → Partner KAP / CFO"}
+      ],
+      "skill_utama": ["Excel Advanced", "SAP", "Perpajakan", "Audit", "PSAK/IFRS"],
+      "rata_gaji_awal": 8,
+      "growth_score": 80,
+      "happiness_score": 70
+    },
+    "ilmu_ekonomi": {
+      "nama": "Ilmu Ekonomi",
+      "fakultas": "Ekonomi & Bisnis",
+      "emoji": "💹",
+      "warna": "#3B82F6",
+      "deskripsi": "Mempelajari cara manusia dan negara mengelola sumber daya yang terbatas — dari kebijakan moneter, pembangunan, hingga ekonomi digital.",
+      "cocok_untuk": ["Tertarik isu ekonomi dan kebijakan publik", "Suka analisis data dan riset kuantitatif", "Ingin berkarir di bank sentral atau pemerintahan"],
+      "prospek_kerja": [
+        {"posisi": "Ekonom / Researcher", "gaji_junior": "7-13 jt", "gaji_senior": "22-50 jt", "demand": "Sedang"},
+        {"posisi": "Analis Bank Indonesia / OJK", "gaji_junior": "10-18 jt", "gaji_senior": "25-55 jt", "demand": "Tinggi"},
+        {"posisi": "Investment Analyst", "gaji_junior": "8-15 jt", "gaji_senior": "25-70 jt", "demand": "Tinggi"},
+        {"posisi": "Policy Analyst", "gaji_junior": "7-14 jt", "gaji_senior": "20-45 jt", "demand": "Sedang"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Universitas Airlangga", "UNDIP"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Ekonomi mikro/makro, matematika ekonomi, statistika"},
+        {"tahap": "Tahun 3", "fokus": "Ekonometrika, ekonomi moneter, pembangunan, internasional"},
+        {"tahap": "Tahun 4", "fokus": "Skripsi penelitian, magang di BI/Bappenas/perbankan"},
+        {"tahap": "Setelah Lulus", "fokus": "Analis ekonomi → Senior Economist → Peneliti / Policy Maker"}
+      ],
+      "skill_utama": ["Ekonometrika", "STATA/R", "Economic Modeling", "Policy Analysis", "Riset"],
+      "rata_gaji_awal": 9,
+      "growth_score": 76,
+      "happiness_score": 74
     },
     "hukum": {
       "nama": "Ilmu Hukum",
@@ -131,7 +456,7 @@
       "emoji": "⚖️",
       "warna": "#0EA5E9",
       "deskripsi": "Mempelajari sistem hukum, perundang-undangan, dan keadilan. Lulusan bisa berkarir di bidang hukum, politik, bisnis, hingga NGO.",
-      "cocok_untuk": ["Suka berdebat dan argumentasi logis", "Peduli keadilan dan isu sosial", "Kemampuan membaca dan menulis yang kuat", "Analitis dan detail-oriented"],
+      "cocok_untuk": ["Suka berdebat dan argumentasi logis", "Peduli keadilan dan isu sosial", "Kemampuan membaca dan menulis yang kuat"],
       "prospek_kerja": [
         {"posisi": "Pengacara / Advokat", "gaji_junior": "6-12 jt", "gaji_senior": "25-100 jt", "demand": "Tinggi"},
         {"posisi": "Legal Corporate", "gaji_junior": "8-15 jt", "gaji_senior": "25-55 jt", "demand": "Tinggi"},
@@ -143,12 +468,187 @@
         {"tahap": "Tahun 1-2", "fokus": "Pengantar hukum, hukum perdata, pidana, tata negara"},
         {"tahap": "Tahun 3", "fokus": "Spesialisasi: bisnis, internasional, pidana, atau tata negara"},
         {"tahap": "Tahun 4", "fokus": "Magang di law firm / instansi pemerintah, skripsi"},
-        {"tahap": "Setelah Lulus", "fokus": "PKPA (advokat) → Pengacara / Legal Officer / Notaris"}
+        {"tahap": "Setelah Lulus", "fokus": "PKPA advokat → Pengacara / Legal Officer / Notaris"}
       ],
       "skill_utama": ["Analisis Hukum", "Legal Writing", "Negosiasi", "Riset", "Public Speaking"],
       "rata_gaji_awal": 9,
       "growth_score": 72,
       "happiness_score": 74
+    },
+    "hubungan_internasional": {
+      "nama": "Hubungan Internasional",
+      "fakultas": "Ilmu Sosial & Politik",
+      "emoji": "🌏",
+      "warna": "#2563EB",
+      "deskripsi": "Mempelajari politik global, diplomasi, kebijakan luar negeri, dan isu internasional seperti perdamaian, HAM, dan perdagangan dunia.",
+      "cocok_untuk": ["Tertarik politik dan isu global", "Suka bahasa asing dan budaya lain", "Bermimpi bekerja di luar negeri atau PBB"],
+      "prospek_kerja": [
+        {"posisi": "Diplomat / Kemenlu", "gaji_junior": "8-16 jt", "gaji_senior": "25-60 jt", "demand": "Sedang"},
+        {"posisi": "International Organization Staff", "gaji_junior": "15-30 jt", "gaji_senior": "40-100 jt", "demand": "Tinggi"},
+        {"posisi": "Policy Analyst", "gaji_junior": "7-14 jt", "gaji_senior": "20-45 jt", "demand": "Sedang"},
+        {"posisi": "Global Business Development", "gaji_junior": "8-15 jt", "gaji_senior": "25-60 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Atmajaya", "Universitas Paramadina"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Teori HI, sejarah diplomasi, politik komparatif, bahasa asing"},
+        {"tahap": "Tahun 3", "fokus": "Kebijakan luar negeri RI, organisasi internasional, hukum internasional"},
+        {"tahap": "Tahun 4", "fokus": "Magang di Kemenlu/NGO/perusahaan multinasional, skripsi"},
+        {"tahap": "Setelah Lulus", "fokus": "Staf kemenlu / NGO → Diplomat → Duta Besar / Direktur NGO"}
+      ],
+      "skill_utama": ["Diplomasi", "Bahasa Asing", "Analisis Kebijakan", "Public Speaking", "Negosiasi"],
+      "rata_gaji_awal": 9,
+      "growth_score": 70,
+      "happiness_score": 80
+    },
+    "ilmu_komunikasi": {
+      "nama": "Ilmu Komunikasi",
+      "fakultas": "Ilmu Sosial & Politik",
+      "emoji": "📣",
+      "warna": "#F43F5E",
+      "deskripsi": "Mempelajari bagaimana pesan disampaikan dan diterima — dari jurnalisme, public relations, advertising, hingga komunikasi digital di era media sosial.",
+      "cocok_untuk": ["Pandai bergaul dan berkomunikasi", "Suka menulis, berbicara, atau membuat konten", "Tertarik media dan dunia kreatif"],
+      "prospek_kerja": [
+        {"posisi": "Content Strategist", "gaji_junior": "6-11 jt", "gaji_senior": "18-40 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Public Relations Manager", "gaji_junior": "7-12 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"},
+        {"posisi": "Jurnalis / Editor", "gaji_junior": "5-9 jt", "gaji_senior": "12-30 jt", "demand": "Sedang"},
+        {"posisi": "Digital Marketing Manager", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Sangat Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "BINUS", "Universitas Paramadina", "UNS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar komunikasi, teori media, penulisan, fotografi/videografi"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: jurnalistik / PR / advertising / digital media"},
+        {"tahap": "Tahun 4", "fokus": "Magang di media/agency/perusahaan, tugas akhir"},
+        {"tahap": "Setelah Lulus", "fokus": "Staf komunikasi → Senior → Manager → Director / Konsultan"}
+      ],
+      "skill_utama": ["Copywriting", "Social Media", "Public Speaking", "Video Production", "Analytics"],
+      "rata_gaji_awal": 7,
+      "growth_score": 78,
+      "happiness_score": 82
+    },
+    "pendidikan": {
+      "nama": "Ilmu Pendidikan / PGSD",
+      "fakultas": "Keguruan & Ilmu Pendidikan",
+      "emoji": "📚",
+      "warna": "#F59E0B",
+      "deskripsi": "Mendidik calon guru profesional yang mampu merancang pembelajaran bermakna dan membentuk generasi penerus bangsa.",
+      "cocok_untuk": ["Sabar dan suka mengajar", "Ingin berdampak nyata pada generasi muda", "Tertarik ilmu psikologi perkembangan anak"],
+      "prospek_kerja": [
+        {"posisi": "Guru SD/SMP/SMA", "gaji_junior": "3-7 jt", "gaji_senior": "8-20 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Instruktur / Trainer", "gaji_junior": "6-12 jt", "gaji_senior": "15-40 jt", "demand": "Tinggi"},
+        {"posisi": "Curriculum Developer", "gaji_junior": "7-13 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"},
+        {"posisi": "EdTech Specialist", "gaji_junior": "8-14 jt", "gaji_senior": "20-45 jt", "demand": "Sangat Tinggi"}
+      ],
+      "universitas_top": ["UPI", "UNY", "UNJ", "UM Malang", "UNNES", "USD Yogyakarta"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Psikologi pendidikan, teori belajar, kurikulum, pedagogik"},
+        {"tahap": "Tahun 3", "fokus": "Micro teaching, desain pembelajaran, asesmen pendidikan"},
+        {"tahap": "Tahun 4", "fokus": "PPL di sekolah, skripsi, persiapan PPG"},
+        {"tahap": "Setelah Lulus", "fokus": "Guru → Kepala Sekolah → Pengawas / Dosen / EdTech"}
+      ],
+      "skill_utama": ["Pedagogi", "Desain Kurikulum", "Public Speaking", "Psikologi Anak", "E-learning"],
+      "rata_gaji_awal": 5,
+      "growth_score": 68,
+      "happiness_score": 88
+    },
+    "statistika": {
+      "nama": "Statistika",
+      "fakultas": "MIPA",
+      "emoji": "📉",
+      "warna": "#7C3AED",
+      "deskripsi": "Ilmu mengumpulkan, menganalisis, dan menginterpretasikan data. Di era big data dan AI, statistikawan menjadi salah satu profesi paling dicari.",
+      "cocok_untuk": ["Sangat suka matematika", "Senang menemukan pola dari data", "Ingin berkarir di data science atau riset"],
+      "prospek_kerja": [
+        {"posisi": "Data Analyst", "gaji_junior": "8-15 jt", "gaji_senior": "25-55 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Data Scientist", "gaji_junior": "10-18 jt", "gaji_senior": "30-70 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Statistikawan BPS/BI", "gaji_junior": "8-15 jt", "gaji_senior": "20-45 jt", "demand": "Tinggi"},
+        {"posisi": "Actuary", "gaji_junior": "9-16 jt", "gaji_senior": "30-80 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["IPB", "ITS", "UI", "UGM", "UNDIP", "Universitas Brawijaya"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Kalkulus, aljabar linear, probabilitas, statistika dasar"},
+        {"tahap": "Tahun 3", "fokus": "Machine learning, time series, data mining, survival analysis"},
+        {"tahap": "Tahun 4", "fokus": "Proyek data riil, skripsi, magang di BPS/perusahaan data"},
+        {"tahap": "Setelah Lulus", "fokus": "Data analyst → Data scientist → Chief Data Officer"}
+      ],
+      "skill_utama": ["R", "Python", "SQL", "Machine Learning", "Visualisasi Data"],
+      "rata_gaji_awal": 10,
+      "growth_score": 92,
+      "happiness_score": 78
+    },
+    "biologi": {
+      "nama": "Biologi",
+      "fakultas": "MIPA",
+      "emoji": "🧬",
+      "warna": "#22C55E",
+      "deskripsi": "Mempelajari kehidupan dari tingkat molekuler hingga ekosistem — genetika, mikrobiologi, bioteknologi, hingga konservasi alam.",
+      "cocok_untuk": ["Suka alam dan makhluk hidup", "Tertarik riset sains", "Ingin berkarir di bioteknologi atau lingkungan"],
+      "prospek_kerja": [
+        {"posisi": "Peneliti Bioteknologi", "gaji_junior": "6-12 jt", "gaji_senior": "18-45 jt", "demand": "Tinggi"},
+        {"posisi": "Environmental Analyst", "gaji_junior": "6-11 jt", "gaji_senior": "15-35 jt", "demand": "Tinggi"},
+        {"posisi": "Lab Analyst / QC", "gaji_junior": "5-9 jt", "gaji_senior": "12-28 jt", "demand": "Tinggi"},
+        {"posisi": "Akademisi / Dosen", "gaji_junior": "6-12 jt", "gaji_senior": "15-30 jt", "demand": "Sedang"}
+      ],
+      "universitas_top": ["ITB", "UI", "UGM", "IPB", "Universitas Brawijaya", "ITS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Biologi sel, genetika, evolusi, ekologi, kimia organik"},
+        {"tahap": "Tahun 3", "fokus": "Bioteknologi, mikrobiologi, biologi molekuler, bioinformatika"},
+        {"tahap": "Tahun 4", "fokus": "Penelitian laboratorium, skripsi, magang di industri/lembaga riset"},
+        {"tahap": "Setelah Lulus", "fokus": "Lab researcher → Senior scientist → S2/S3 atau industri biotek"}
+      ],
+      "skill_utama": ["Bioteknologi", "PCR/Sequencing", "Bioinformatika", "Mikroskopi", "SPSS"],
+      "rata_gaji_awal": 7,
+      "growth_score": 70,
+      "happiness_score": 80
+    },
+    "pertanian": {
+      "nama": "Agribisnis / Pertanian",
+      "fakultas": "Pertanian",
+      "emoji": "🌾",
+      "warna": "#65A30D",
+      "deskripsi": "Mempelajari sistem pertanian modern yang mengintegrasikan teknologi, bisnis, dan keberlanjutan lingkungan untuk ketahanan pangan nasional.",
+      "cocok_untuk": ["Peduli ketahanan pangan dan lingkungan", "Suka sains biologi dan alam terbuka", "Tertarik agribisnis dan food tech"],
+      "prospek_kerja": [
+        {"posisi": "Agribusiness Manager", "gaji_junior": "6-12 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"},
+        {"posisi": "Food Technologist", "gaji_junior": "6-11 jt", "gaji_senior": "15-35 jt", "demand": "Tinggi"},
+        {"posisi": "Agricultural Consultant", "gaji_junior": "7-13 jt", "gaji_senior": "18-40 jt", "demand": "Sedang"},
+        {"posisi": "AgriTech Founder", "gaji_junior": "Variabel", "gaji_senior": "Tidak terbatas", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["IPB", "UGM", "UNPAD", "Universitas Brawijaya", "UNSOED"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Biologi pertanian, tanah, agronomi, ekonomi pertanian"},
+        {"tahap": "Tahun 3", "fokus": "Manajemen agribisnis, teknologi pasca panen, pemasaran"},
+        {"tahap": "Tahun 4", "fokus": "PKL di perusahaan pertanian/agribisnis, skripsi"},
+        {"tahap": "Setelah Lulus", "fokus": "Field officer → Manajer → Direktur / Founder AgriTech"}
+      ],
+      "skill_utama": ["Agronomi", "GIS", "Supply Chain Pertanian", "Analisis Pasar", "Food Safety"],
+      "rata_gaji_awal": 7,
+      "growth_score": 72,
+      "happiness_score": 78
+    },
+    "sastra_inggris": {
+      "nama": "Sastra Inggris",
+      "fakultas": "Ilmu Budaya / Humaniora",
+      "emoji": "📖",
+      "warna": "#DB2777",
+      "deskripsi": "Mendalami bahasa, sastra, dan budaya Inggris — dari analisis teks klasik hingga linguistik terapan dan penerjemahan profesional.",
+      "cocok_untuk": ["Sangat fasih bahasa Inggris", "Suka membaca dan analisis teks", "Ingin karir di bidang bahasa, media, atau diplomatik"],
+      "prospek_kerja": [
+        {"posisi": "Penerjemah / Interpreter", "gaji_junior": "6-12 jt", "gaji_senior": "18-50 jt", "demand": "Tinggi"},
+        {"posisi": "Content Writer / Editor", "gaji_junior": "5-10 jt", "gaji_senior": "15-35 jt", "demand": "Tinggi"},
+        {"posisi": "EFL Teacher / Trainer", "gaji_junior": "5-10 jt", "gaji_senior": "12-30 jt", "demand": "Tinggi"},
+        {"posisi": "Localization Specialist", "gaji_junior": "7-13 jt", "gaji_senior": "18-40 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Universitas Airlangga", "UNDIP", "USD"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Linguistik dasar, sastra Inggris, academic writing, grammar"},
+        {"tahap": "Tahun 3", "fokus": "Penerjemahan, sastra Amerika/Inggris, applied linguistics"},
+        {"tahap": "Tahun 4", "fokus": "Skripsi analisis sastra/linguistik, magang di media/perusahaan"},
+        {"tahap": "Setelah Lulus", "fokus": "Penerjemah → Senior Translator → Language Consultant / Editor"}
+      ],
+      "skill_utama": ["English Proficiency", "Translation", "Academic Writing", "Linguistics", "Cross-cultural Communication"],
+      "rata_gaji_awal": 7,
+      "growth_score": 68,
+      "happiness_score": 82
     }
   },
   "pertanyaan_quiz": [
@@ -157,10 +657,10 @@
       "kategori": "minat",
       "pertanyaan": "Kalau lagi waktu luang, kamu paling sering ngapain?",
       "opsi": [
-        {"teks": "Main game, ngoding, atau utak-atik gadget 🖥️", "skor": {"teknik_informatika": 3, "desain_komunikasi_visual": 1}},
-        {"teks": "Gambar, desain, atau bikin konten kreatif 🎨", "skor": {"desain_komunikasi_visual": 3, "bisnis_manajemen": 1}},
-        {"teks": "Ngobrol, dengerin cerita orang, atau nonton dokumenter 🗣️", "skor": {"psikologi": 3, "hukum": 1}},
-        {"teks": "Baca berita bisnis, nonton YouTube entrepreneur 📊", "skor": {"bisnis_manajemen": 3, "hukum": 1}}
+        {"teks": "Main game, ngoding, atau utak-atik gadget 🖥️", "skor": {"teknik_informatika": 3, "sistem_informasi": 2, "statistika": 1}},
+        {"teks": "Gambar, desain, atau bikin konten kreatif 🎨", "skor": {"desain_komunikasi_visual": 3, "seni_rupa": 2, "arsitektur": 1}},
+        {"teks": "Ngobrol, dengerin cerita orang, atau nonton dokumenter sosial 🗣️", "skor": {"psikologi": 3, "ilmu_komunikasi": 2, "pendidikan": 1}},
+        {"teks": "Baca berita bisnis, nonton YouTube entrepreneur, atau ngikutin saham 📊", "skor": {"bisnis_manajemen": 3, "akuntansi": 2, "ilmu_ekonomi": 2}}
       ]
     },
     {
@@ -168,10 +668,10 @@
       "kategori": "kepribadian",
       "pertanyaan": "Di sebuah proyek kelompok, kamu biasanya jadi...",
       "opsi": [
-        {"teks": "Yang ngerjain bagian teknis dan problem solving 🔧", "skor": {"teknik_informatika": 3, "kedokteran": 1}},
-        {"teks": "Yang bikin presentasi dan desain visualnya 🎯", "skor": {"desain_komunikasi_visual": 3, "bisnis_manajemen": 1}},
-        {"teks": "Yang jadi penengah kalau ada konflik 🤝", "skor": {"psikologi": 3, "hukum": 2}},
-        {"teks": "Yang ngatur jadwal, bagi tugas, dan mastiin selesai 📋", "skor": {"bisnis_manajemen": 3, "hukum": 1}}
+        {"teks": "Yang ngerjain bagian teknis dan problem solving 🔧", "skor": {"teknik_informatika": 3, "teknik_elektro": 2, "statistika": 2}},
+        {"teks": "Yang bikin presentasi dan desain visualnya 🎯", "skor": {"desain_komunikasi_visual": 3, "ilmu_komunikasi": 2, "arsitektur": 1}},
+        {"teks": "Yang jadi penengah konflik dan dengerin semua pihak 🤝", "skor": {"psikologi": 3, "hukum": 2, "pendidikan": 2}},
+        {"teks": "Yang ngatur jadwal, bagi tugas, dan mastiin semua beres 📋", "skor": {"bisnis_manajemen": 3, "sistem_informasi": 2, "akuntansi": 1}}
       ]
     },
     {
@@ -179,10 +679,10 @@
       "kategori": "nilai",
       "pertanyaan": "Menurutmu, hal terpenting dalam pekerjaan impianmu adalah...",
       "opsi": [
-        {"teks": "Gaji tinggi dan financial freedom 💰", "skor": {"teknik_informatika": 2, "kedokteran": 2, "bisnis_manajemen": 2}},
-        {"teks": "Bisa ekspresi diri dan berkreasi bebas ✨", "skor": {"desain_komunikasi_visual": 3, "psikologi": 1}},
-        {"teks": "Membantu orang lain dan punya dampak sosial ❤️", "skor": {"psikologi": 3, "kedokteran": 3, "hukum": 2}},
-        {"teks": "Terus belajar dan jadi ahli di bidangku 🎓", "skor": {"kedokteran": 2, "teknik_informatika": 2, "hukum": 2}}
+        {"teks": "Gaji tinggi dan financial freedom 💰", "skor": {"teknik_informatika": 2, "kedokteran": 2, "bisnis_manajemen": 2, "akuntansi": 2, "statistika": 2}},
+        {"teks": "Bisa ekspresi diri dan berkreasi dengan bebas ✨", "skor": {"desain_komunikasi_visual": 3, "seni_rupa": 3, "ilmu_komunikasi": 2}},
+        {"teks": "Membantu orang lain dan punya dampak sosial nyata ❤️", "skor": {"psikologi": 3, "kedokteran": 3, "keperawatan": 3, "pendidikan": 2}},
+        {"teks": "Terus belajar, riset, dan jadi ahli terdalam di bidangku 🎓", "skor": {"kedokteran": 2, "biologi": 3, "statistika": 2, "farmasi": 2}}
       ]
     },
     {
@@ -190,10 +690,10 @@
       "kategori": "akademik",
       "pertanyaan": "Pelajaran apa yang paling kamu enjoy di sekolah?",
       "opsi": [
-        {"teks": "Matematika dan Fisika — suka nemu solusi dari rumus 🔢", "skor": {"teknik_informatika": 3, "kedokteran": 1}},
-        {"teks": "Seni, Prakarya, atau pelajaran yang ada unsur kreatifnya 🖌️", "skor": {"desain_komunikasi_visual": 3}},
-        {"teks": "Biologi atau Kimia — tertarik sama ilmu kehidupan 🧬", "skor": {"kedokteran": 3, "psikologi": 1}},
-        {"teks": "Ekonomi atau IPS — senang ngerti cara kerja masyarakat 🌍", "skor": {"bisnis_manajemen": 3, "hukum": 2, "psikologi": 1}}
+        {"teks": "Matematika dan Fisika — suka nemu solusi dari rumus 🔢", "skor": {"teknik_informatika": 3, "teknik_elektro": 3, "statistika": 3, "teknik_mesin": 2}},
+        {"teks": "Seni, Prakarya, atau pelajaran yang ada unsur kreatifnya 🖌️", "skor": {"desain_komunikasi_visual": 3, "seni_rupa": 3, "arsitektur": 2}},
+        {"teks": "Biologi atau Kimia — tertarik sama ilmu kehidupan 🧬", "skor": {"kedokteran": 3, "farmasi": 3, "biologi": 3, "teknik_kimia": 3, "gizi": 2}},
+        {"teks": "Bahasa, Ekonomi, atau IPS — senang ngerti cara kerja masyarakat 🌍", "skor": {"bisnis_manajemen": 2, "hukum": 2, "hubungan_internasional": 3, "sastra_inggris": 3}}
       ]
     },
     {
@@ -201,10 +701,10 @@
       "kategori": "gaya_kerja",
       "pertanyaan": "Kamu lebih suka kerja seperti apa?",
       "opsi": [
-        {"teks": "Solo, fokus, dengan headphone dan layar penuh 🎧", "skor": {"teknik_informatika": 3, "desain_komunikasi_visual": 2}},
-        {"teks": "Kolaborasi kreatif dengan tim yang saling berbagi ide 💡", "skor": {"desain_komunikasi_visual": 2, "bisnis_manajemen": 2, "psikologi": 1}},
-        {"teks": "Berhadapan langsung dengan orang — konsultasi, coaching 👥", "skor": {"psikologi": 3, "kedokteran": 2, "hukum": 2}},
-        {"teks": "Strategi dan meeting — nentuin arah besar perusahaan 🚀", "skor": {"bisnis_manajemen": 3, "hukum": 1}}
+        {"teks": "Solo, fokus total, deep work dengan headphone seharian 🎧", "skor": {"teknik_informatika": 3, "desain_komunikasi_visual": 2, "statistika": 2}},
+        {"teks": "Kolaborasi kreatif dengan tim yang saling berbagi ide 💡", "skor": {"ilmu_komunikasi": 2, "bisnis_manajemen": 2, "arsitektur": 2}},
+        {"teks": "Berhadapan langsung dengan orang — konsultasi, merawat, mengajar 👥", "skor": {"psikologi": 3, "kedokteran": 2, "keperawatan": 3, "pendidikan": 3}},
+        {"teks": "Lapangan dan outdoor — survei, eksperimen, atau proyek fisik 🏕️", "skor": {"teknik_sipil": 3, "pertanian": 3, "biologi": 2, "teknik_mesin": 2}}
       ]
     },
     {
@@ -212,10 +712,10 @@
       "kategori": "tantangan",
       "pertanyaan": "Tantangan mana yang paling tidak membuatmu takut?",
       "opsi": [
-        {"teks": "Debug kode 8 jam sampai akhirnya ketemu bug-nya 🐛", "skor": {"teknik_informatika": 3}},
-        {"teks": "Revisi desain 10 kali sampai klien puas 🎯", "skor": {"desain_komunikasi_visual": 3}},
-        {"teks": "Kuliah 7 tahun dan belajar tanpa henti seumur hidup 📚", "skor": {"kedokteran": 3, "hukum": 2}},
-        {"teks": "Negosiasi bisnis yang alot atau presentasi di depan banyak orang 💼", "skor": {"bisnis_manajemen": 3, "hukum": 2}}
+        {"teks": "Debugging kode atau menganalisis data ribuan baris sampai ketemu insight 🐛", "skor": {"teknik_informatika": 3, "statistika": 3, "sistem_informasi": 2}},
+        {"teks": "Kuliah sangat panjang 5-7 tahun demi jadi profesional terbaik 📚", "skor": {"kedokteran": 3, "kedokteran_gigi": 3, "farmasi": 2, "hukum": 2}},
+        {"teks": "Kerja lapangan, kondisi berat, atau lingkungan yang menantang secara fisik 🌿", "skor": {"teknik_sipil": 3, "pertanian": 3, "teknik_mesin": 2}},
+        {"teks": "Presentasi di depan banyak orang atau negosiasi bisnis yang alot 💼", "skor": {"bisnis_manajemen": 3, "ilmu_komunikasi": 3, "hukum": 2, "hubungan_internasional": 2}}
       ]
     },
     {
@@ -223,21 +723,21 @@
       "kategori": "impian",
       "pertanyaan": "5 tahun setelah lulus kuliah, kamu membayangkan dirimu...",
       "opsi": [
-        {"teks": "Kerja di startup tech atau bikin startup sendiri 🦄", "skor": {"teknik_informatika": 3, "bisnis_manajemen": 2}},
-        {"teks": "Punya studio desain atau jadi creative director brand keren 🎨", "skor": {"desain_komunikasi_visual": 3}},
-        {"teks": "Bantu orang sebagai psikolog, konselor, atau HR professional 🌿", "skor": {"psikologi": 3}},
-        {"teks": "Dokter atau profesional kesehatan yang dipercaya pasien ⚕️", "skor": {"kedokteran": 3}}
+        {"teks": "Kerja di startup tech, perusahaan multinasional, atau bikin startup sendiri 🦄", "skor": {"teknik_informatika": 3, "bisnis_manajemen": 2, "statistika": 2, "sistem_informasi": 2}},
+        {"teks": "Profesional kesehatan yang dipercaya pasien atau peneliti medis 🏥", "skor": {"kedokteran": 3, "kedokteran_gigi": 3, "keperawatan": 2, "farmasi": 2}},
+        {"teks": "Berkarir di luar negeri, PBB, lembaga diplomatik, atau NGO internasional 🌍", "skor": {"hubungan_internasional": 3, "sastra_inggris": 2, "hukum": 2}},
+        {"teks": "Punya usaha, studio kreatif, atau berdampak nyata di komunitas lokal 🌱", "skor": {"desain_komunikasi_visual": 2, "bisnis_manajemen": 2, "pertanian": 2, "pendidikan": 2, "seni_rupa": 2}}
       ]
     },
     {
       "id": 8,
       "kategori": "konten",
-      "pertanyaan": "Konten apa yang bikin kamu bisa scroll berjam-jam?",
+      "pertanyaan": "Konten apa yang bikin kamu bisa scroll atau nonton berjam-jam?",
       "opsi": [
-        {"teks": "Tech news, AI, gadget review, atau tutorial coding 💻", "skor": {"teknik_informatika": 3}},
-        {"teks": "Design inspiration, aesthetic, art, atau behind-the-scenes kreator 🖼️", "skor": {"desain_komunikasi_visual": 3}},
-        {"teks": "True crime, psikologi manusia, atau podcast tentang human behavior 🎙️", "skor": {"psikologi": 3, "hukum": 2}},
-        {"teks": "Entrepreneur story, business case study, atau podcast investasi 📈", "skor": {"bisnis_manajemen": 3}}
+        {"teks": "Tech news, AI, gadget, coding tutorial, atau science documentary 💻", "skor": {"teknik_informatika": 3, "biologi": 2, "statistika": 2}},
+        {"teks": "Design inspiration, aesthetic, art, atau behind-the-scenes kreator konten 🖼️", "skor": {"desain_komunikasi_visual": 3, "seni_rupa": 3, "arsitektur": 2}},
+        {"teks": "True crime, psikologi manusia, isu sosial, atau podcast personal development 🎙️", "skor": {"psikologi": 3, "hukum": 2, "ilmu_komunikasi": 2}},
+        {"teks": "Entrepreneur story, investasi, cara kerja bisnis besar, atau ekonomi makro 📈", "skor": {"bisnis_manajemen": 3, "akuntansi": 2, "ilmu_ekonomi": 3}}
       ]
     }
   ]
