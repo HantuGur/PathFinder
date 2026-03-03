@@ -1,0 +1,244 @@
+{
+  "jurusan": {
+    "teknik_informatika": {
+      "nama": "Teknik Informatika",
+      "fakultas": "Teknik / Ilmu Komputer",
+      "emoji": "💻",
+      "warna": "#6366F1",
+      "deskripsi": "Mempelajari algoritma, pemrograman, sistem komputer, dan pengembangan software dari level fundamental hingga aplikasi nyata.",
+      "cocok_untuk": ["Suka logika dan problem solving", "Senang membuat sesuatu dari nol", "Tertarik teknologi dan inovasi", "Menikmati berpikir analitis"],
+      "prospek_kerja": [
+        {"posisi": "Software Engineer", "gaji_junior": "8-15 jt", "gaji_senior": "25-60 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Data Scientist", "gaji_junior": "10-18 jt", "gaji_senior": "30-70 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "DevOps Engineer", "gaji_junior": "10-16 jt", "gaji_senior": "28-55 jt", "demand": "Tinggi"},
+        {"posisi": "AI/ML Engineer", "gaji_junior": "12-20 jt", "gaji_senior": "35-80 jt", "demand": "Sangat Tinggi"}
+      ],
+      "universitas_top": ["UI", "ITB", "ITS", "BINUS", "UGM", "Telkom University"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar programming, matematika diskrit, struktur data, algoritma"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: web dev / AI / cybersecurity / mobile dev"},
+        {"tahap": "Tahun 4", "fokus": "Magang di perusahaan tech, skripsi, bangun portfolio GitHub"},
+        {"tahap": "Setelah Lulus", "fokus": "Junior developer → Senior → Tech Lead / Startup founder"}
+      ],
+      "skill_utama": ["Python", "JavaScript", "SQL", "Git", "Problem Solving"],
+      "rata_gaji_awal": 11,
+      "growth_score": 95,
+      "happiness_score": 82
+    },
+    "desain_komunikasi_visual": {
+      "nama": "Desain Komunikasi Visual",
+      "fakultas": "Seni & Desain",
+      "emoji": "🎨",
+      "warna": "#F59E0B",
+      "deskripsi": "Menggabungkan seni, kreativitas, dan komunikasi untuk menciptakan visual yang bermakna — dari branding hingga UI/UX digital.",
+      "cocok_untuk": ["Punya jiwa seni dan estetika tinggi", "Suka bercerita lewat gambar", "Kreatif dan imajinatif", "Peduli detail visual"],
+      "prospek_kerja": [
+        {"posisi": "UI/UX Designer", "gaji_junior": "7-13 jt", "gaji_senior": "20-45 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Brand Designer", "gaji_junior": "6-11 jt", "gaji_senior": "18-35 jt", "demand": "Tinggi"},
+        {"posisi": "Motion Designer", "gaji_junior": "7-12 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
+        {"posisi": "Creative Director", "gaji_junior": "10-15 jt", "gaji_senior": "30-60 jt", "demand": "Sedang"}
+      ],
+      "universitas_top": ["ITB", "IKJ", "BINUS", "UK Petra", "UPH", "Trisakti"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar desain, tipografi, warna, komposisi, Adobe Suite"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi UI/UX, branding, motion, fotografi"},
+        {"tahap": "Tahun 4", "fokus": "Magang di agency/startup, bangun portfolio Behance/Dribbble"},
+        {"tahap": "Setelah Lulus", "fokus": "Junior designer → Senior → Art Director / Freelance"}
+      ],
+      "skill_utama": ["Figma", "Adobe Illustrator", "Photoshop", "After Effects", "Branding"],
+      "rata_gaji_awal": 9,
+      "growth_score": 80,
+      "happiness_score": 88
+    },
+    "psikologi": {
+      "nama": "Psikologi",
+      "fakultas": "Psikologi",
+      "emoji": "🧠",
+      "warna": "#8B5CF6",
+      "deskripsi": "Mempelajari perilaku manusia, mental, emosi, dan interaksi sosial. Ilmu yang semakin relevan di era modern yang penuh tekanan.",
+      "cocok_untuk": ["Empati tinggi dan suka mendengarkan", "Penasaran dengan cara kerja pikiran manusia", "Suka menganalisis perilaku orang", "Ingin membantu orang lain"],
+      "prospek_kerja": [
+        {"posisi": "Psikolog Klinis", "gaji_junior": "6-12 jt", "gaji_senior": "20-50 jt", "demand": "Tinggi"},
+        {"posisi": "HR & Talent Manager", "gaji_junior": "7-13 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
+        {"posisi": "UX Researcher", "gaji_junior": "8-14 jt", "gaji_senior": "22-45 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Konselor / Coach", "gaji_junior": "5-10 jt", "gaji_senior": "15-40 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Atmajaya", "Universitas Airlangga"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar psikologi, statistik, metodologi penelitian"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: klinis, industri, pendidikan, atau sosial"},
+        {"tahap": "Tahun 4", "fokus": "Praktikum, magang, skripsi penelitian"},
+        {"tahap": "Setelah Lulus", "fokus": "S2 Profesi (wajib untuk psikolog) atau karir HR/researcher"}
+      ],
+      "skill_utama": ["Konseling", "Asesmen Psikologi", "Riset", "Komunikasi", "Empati"],
+      "rata_gaji_awal": 8,
+      "growth_score": 75,
+      "happiness_score": 90
+    },
+    "bisnis_manajemen": {
+      "nama": "Manajemen Bisnis",
+      "fakultas": "Ekonomi & Bisnis",
+      "emoji": "📈",
+      "warna": "#10B981",
+      "deskripsi": "Mempelajari cara mengelola organisasi, strategi bisnis, pemasaran, keuangan, dan kepemimpinan untuk menciptakan nilai di dunia bisnis.",
+      "cocok_untuk": ["Jiwa pemimpin dan suka mengorganisir", "Tertarik dunia bisnis dan entrepreneurship", "Pandai komunikasi dan negosiasi", "Berpikir strategis dan big picture"],
+      "prospek_kerja": [
+        {"posisi": "Business Analyst", "gaji_junior": "7-13 jt", "gaji_senior": "22-45 jt", "demand": "Tinggi"},
+        {"posisi": "Product Manager", "gaji_junior": "10-18 jt", "gaji_senior": "30-65 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Marketing Manager", "gaji_junior": "7-12 jt", "gaji_senior": "20-40 jt", "demand": "Tinggi"},
+        {"posisi": "Entrepreneur / Founder", "gaji_junior": "Variabel", "gaji_senior": "Tidak terbatas", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Prasetiya Mulya", "PPM", "BINUS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Dasar manajemen, akuntansi, ekonomi mikro/makro, statistik"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: marketing, keuangan, SDM, atau operations"},
+        {"tahap": "Tahun 4", "fokus": "Magang di perusahaan / mulai bisnis sendiri, skripsi"},
+        {"tahap": "Setelah Lulus", "fokus": "Management trainee → Manager → Director / Entrepreneur"}
+      ],
+      "skill_utama": ["Leadership", "Strategi Bisnis", "Financial Modeling", "Marketing", "Negosiasi"],
+      "rata_gaji_awal": 9,
+      "growth_score": 82,
+      "happiness_score": 78
+    },
+    "kedokteran": {
+      "nama": "Kedokteran",
+      "fakultas": "Kedokteran",
+      "emoji": "⚕️",
+      "warna": "#EF4444",
+      "deskripsi": "Program studi paling prestisius yang melatih calon dokter untuk mendiagnosis, merawat, dan mencegah penyakit dengan standar ilmiah tertinggi.",
+      "cocok_untuk": ["Dedikasi tinggi dan tidak mudah menyerah", "Suka ilmu sains (biologi, kimia)", "Empati besar dan ingin menolong orang", "Siap belajar seumur hidup"],
+      "prospek_kerja": [
+        {"posisi": "Dokter Umum", "gaji_junior": "8-20 jt", "gaji_senior": "25-60 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Dokter Spesialis", "gaji_junior": "20-50 jt", "gaji_senior": "60-200 jt", "demand": "Sangat Tinggi"},
+        {"posisi": "Peneliti Medis", "gaji_junior": "8-15 jt", "gaji_senior": "25-50 jt", "demand": "Tinggi"},
+        {"posisi": "Healthcare Startup", "gaji_junior": "15-25 jt", "gaji_senior": "40-80 jt", "demand": "Tinggi"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Universitas Airlangga", "UNS"],
+      "roadmap": [
+        {"tahap": "Tahun 1-3", "fokus": "Pre-klinik: anatomi, fisiologi, biokimia, patologi"},
+        {"tahap": "Tahun 4-6", "fokus": "Klinik: rotasi di berbagai departemen RS"},
+        {"tahap": "Koas & Internship", "fokus": "Praktik langsung, ujian kompetensi (UKMPPD)"},
+        {"tahap": "Setelah Lulus", "fokus": "Dokter umum → Spesialisasi (3-5 tahun) → Subspesialis"}
+      ],
+      "skill_utama": ["Diagnosis Klinis", "Komunikasi Pasien", "Ilmu Sains", "Empati", "Ketelitian"],
+      "rata_gaji_awal": 14,
+      "growth_score": 90,
+      "happiness_score": 85
+    },
+    "hukum": {
+      "nama": "Ilmu Hukum",
+      "fakultas": "Hukum",
+      "emoji": "⚖️",
+      "warna": "#0EA5E9",
+      "deskripsi": "Mempelajari sistem hukum, perundang-undangan, dan keadilan. Lulusan bisa berkarir di bidang hukum, politik, bisnis, hingga NGO.",
+      "cocok_untuk": ["Suka berdebat dan argumentasi logis", "Peduli keadilan dan isu sosial", "Kemampuan membaca dan menulis yang kuat", "Analitis dan detail-oriented"],
+      "prospek_kerja": [
+        {"posisi": "Pengacara / Advokat", "gaji_junior": "6-12 jt", "gaji_senior": "25-100 jt", "demand": "Tinggi"},
+        {"posisi": "Legal Corporate", "gaji_junior": "8-15 jt", "gaji_senior": "25-55 jt", "demand": "Tinggi"},
+        {"posisi": "Notaris", "gaji_junior": "10-20 jt", "gaji_senior": "30-80 jt", "demand": "Tinggi"},
+        {"posisi": "Policy Analyst", "gaji_junior": "7-13 jt", "gaji_senior": "20-40 jt", "demand": "Sedang"}
+      ],
+      "universitas_top": ["UI", "UGM", "UNPAD", "Universitas Airlangga", "Atmajaya"],
+      "roadmap": [
+        {"tahap": "Tahun 1-2", "fokus": "Pengantar hukum, hukum perdata, pidana, tata negara"},
+        {"tahap": "Tahun 3", "fokus": "Spesialisasi: bisnis, internasional, pidana, atau tata negara"},
+        {"tahap": "Tahun 4", "fokus": "Magang di law firm / instansi pemerintah, skripsi"},
+        {"tahap": "Setelah Lulus", "fokus": "PKPA (advokat) → Pengacara / Legal Officer / Notaris"}
+      ],
+      "skill_utama": ["Analisis Hukum", "Legal Writing", "Negosiasi", "Riset", "Public Speaking"],
+      "rata_gaji_awal": 9,
+      "growth_score": 72,
+      "happiness_score": 74
+    }
+  },
+  "pertanyaan_quiz": [
+    {
+      "id": 1,
+      "kategori": "minat",
+      "pertanyaan": "Kalau lagi waktu luang, kamu paling sering ngapain?",
+      "opsi": [
+        {"teks": "Main game, ngoding, atau utak-atik gadget 🖥️", "skor": {"teknik_informatika": 3, "desain_komunikasi_visual": 1}},
+        {"teks": "Gambar, desain, atau bikin konten kreatif 🎨", "skor": {"desain_komunikasi_visual": 3, "bisnis_manajemen": 1}},
+        {"teks": "Ngobrol, dengerin cerita orang, atau nonton dokumenter 🗣️", "skor": {"psikologi": 3, "hukum": 1}},
+        {"teks": "Baca berita bisnis, nonton YouTube entrepreneur 📊", "skor": {"bisnis_manajemen": 3, "hukum": 1}}
+      ]
+    },
+    {
+      "id": 2,
+      "kategori": "kepribadian",
+      "pertanyaan": "Di sebuah proyek kelompok, kamu biasanya jadi...",
+      "opsi": [
+        {"teks": "Yang ngerjain bagian teknis dan problem solving 🔧", "skor": {"teknik_informatika": 3, "kedokteran": 1}},
+        {"teks": "Yang bikin presentasi dan desain visualnya 🎯", "skor": {"desain_komunikasi_visual": 3, "bisnis_manajemen": 1}},
+        {"teks": "Yang jadi penengah kalau ada konflik 🤝", "skor": {"psikologi": 3, "hukum": 2}},
+        {"teks": "Yang ngatur jadwal, bagi tugas, dan mastiin selesai 📋", "skor": {"bisnis_manajemen": 3, "hukum": 1}}
+      ]
+    },
+    {
+      "id": 3,
+      "kategori": "nilai",
+      "pertanyaan": "Menurutmu, hal terpenting dalam pekerjaan impianmu adalah...",
+      "opsi": [
+        {"teks": "Gaji tinggi dan financial freedom 💰", "skor": {"teknik_informatika": 2, "kedokteran": 2, "bisnis_manajemen": 2}},
+        {"teks": "Bisa ekspresi diri dan berkreasi bebas ✨", "skor": {"desain_komunikasi_visual": 3, "psikologi": 1}},
+        {"teks": "Membantu orang lain dan punya dampak sosial ❤️", "skor": {"psikologi": 3, "kedokteran": 3, "hukum": 2}},
+        {"teks": "Terus belajar dan jadi ahli di bidangku 🎓", "skor": {"kedokteran": 2, "teknik_informatika": 2, "hukum": 2}}
+      ]
+    },
+    {
+      "id": 4,
+      "kategori": "akademik",
+      "pertanyaan": "Pelajaran apa yang paling kamu enjoy di sekolah?",
+      "opsi": [
+        {"teks": "Matematika dan Fisika — suka nemu solusi dari rumus 🔢", "skor": {"teknik_informatika": 3, "kedokteran": 1}},
+        {"teks": "Seni, Prakarya, atau pelajaran yang ada unsur kreatifnya 🖌️", "skor": {"desain_komunikasi_visual": 3}},
+        {"teks": "Biologi atau Kimia — tertarik sama ilmu kehidupan 🧬", "skor": {"kedokteran": 3, "psikologi": 1}},
+        {"teks": "Ekonomi atau IPS — senang ngerti cara kerja masyarakat 🌍", "skor": {"bisnis_manajemen": 3, "hukum": 2, "psikologi": 1}}
+      ]
+    },
+    {
+      "id": 5,
+      "kategori": "gaya_kerja",
+      "pertanyaan": "Kamu lebih suka kerja seperti apa?",
+      "opsi": [
+        {"teks": "Solo, fokus, dengan headphone dan layar penuh 🎧", "skor": {"teknik_informatika": 3, "desain_komunikasi_visual": 2}},
+        {"teks": "Kolaborasi kreatif dengan tim yang saling berbagi ide 💡", "skor": {"desain_komunikasi_visual": 2, "bisnis_manajemen": 2, "psikologi": 1}},
+        {"teks": "Berhadapan langsung dengan orang — konsultasi, coaching 👥", "skor": {"psikologi": 3, "kedokteran": 2, "hukum": 2}},
+        {"teks": "Strategi dan meeting — nentuin arah besar perusahaan 🚀", "skor": {"bisnis_manajemen": 3, "hukum": 1}}
+      ]
+    },
+    {
+      "id": 6,
+      "kategori": "tantangan",
+      "pertanyaan": "Tantangan mana yang paling tidak membuatmu takut?",
+      "opsi": [
+        {"teks": "Debug kode 8 jam sampai akhirnya ketemu bug-nya 🐛", "skor": {"teknik_informatika": 3}},
+        {"teks": "Revisi desain 10 kali sampai klien puas 🎯", "skor": {"desain_komunikasi_visual": 3}},
+        {"teks": "Kuliah 7 tahun dan belajar tanpa henti seumur hidup 📚", "skor": {"kedokteran": 3, "hukum": 2}},
+        {"teks": "Negosiasi bisnis yang alot atau presentasi di depan banyak orang 💼", "skor": {"bisnis_manajemen": 3, "hukum": 2}}
+      ]
+    },
+    {
+      "id": 7,
+      "kategori": "impian",
+      "pertanyaan": "5 tahun setelah lulus kuliah, kamu membayangkan dirimu...",
+      "opsi": [
+        {"teks": "Kerja di startup tech atau bikin startup sendiri 🦄", "skor": {"teknik_informatika": 3, "bisnis_manajemen": 2}},
+        {"teks": "Punya studio desain atau jadi creative director brand keren 🎨", "skor": {"desain_komunikasi_visual": 3}},
+        {"teks": "Bantu orang sebagai psikolog, konselor, atau HR professional 🌿", "skor": {"psikologi": 3}},
+        {"teks": "Dokter atau profesional kesehatan yang dipercaya pasien ⚕️", "skor": {"kedokteran": 3}}
+      ]
+    },
+    {
+      "id": 8,
+      "kategori": "konten",
+      "pertanyaan": "Konten apa yang bikin kamu bisa scroll berjam-jam?",
+      "opsi": [
+        {"teks": "Tech news, AI, gadget review, atau tutorial coding 💻", "skor": {"teknik_informatika": 3}},
+        {"teks": "Design inspiration, aesthetic, art, atau behind-the-scenes kreator 🖼️", "skor": {"desain_komunikasi_visual": 3}},
+        {"teks": "True crime, psikologi manusia, atau podcast tentang human behavior 🎙️", "skor": {"psikologi": 3, "hukum": 2}},
+        {"teks": "Entrepreneur story, business case study, atau podcast investasi 📈", "skor": {"bisnis_manajemen": 3}}
+      ]
+    }
+  ]
+}

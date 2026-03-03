@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PathFinder — Temukan Jurusanmu</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   VARIABLES
+══════════════════════════════════════ */
+:root {
+  --bg:       #FAFAFA;
+  --white:    #FFFFFF;
+  --surface:  #F4F4F5;
+  --surface2: #EBEBED;
+  --border:   #E4E4E7;
+  --border2:  #D4D4D8;
+  --text:     #09090B;
+  --text2:    #3F3F46;
+  --muted:    #71717A;
+  --muted2:   #A1A1AA;
+  --indigo:   #6366F1;
+  --indigo2:  #818CF8;
+  --indigo-bg:rgba(99,102,241,0.08);
+  --emerald:  #10B981;
+  --amber:    #F59E0B;
+  --rose:     #F43F5E;
+  --violet:   #8B5CF6;
+  --sky:      #0EA5E9;
+  --font:     'Bricolage Grotesque', sans-serif;
+  --body:     'DM Sans', sans-serif;
+  --mono:     'DM Mono', monospace;
+  --radius:   14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow:    0 4px 16px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════════
+   LAYOUT — TAB SYSTEM
+══════════════════════════════════════ */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; animation: fadeUp 0.4s ease both; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+/* ══════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════ */
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,250,250,0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+}
+.nav-brand {
+  font-family: var(--font); font-weight: 800; font-size: 1.1rem;
+  color: var(--text); display: flex; align-items: center; gap: 0.5rem;
+  text-decoration: none;
+}
+.nav-brand-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--indigo); display: inline-block;
+  animation: breathe 2.5s ease-in-out infinite;
+}
+@keyframes breathe { 0%,100%{transform:scale(1)} 50%{transform:scale(1.4)} }
+
+.nav-tabs { display: flex; gap: 0.2rem; }
+.nav-tab {
+  padding: 0.45rem 1rem; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600; cursor: pointer;
+  color: var(--muted); border: none; background: transparent;
+  font-family: var(--body); transition: all 0.2s;
+}
+.nav-tab:hover { color: var(--text); background: var(--surface); }
+.nav-tab.active { color: var(--indigo); background: var(--indigo-bg); }
+
+/* ══════════════════════════════════════
+   LANDING PAGE
+══════════════════════════════════════ */
+.hero {
+  max-width: 1100px; margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--indigo-bg); color: var(--indigo);
+  border: 1px solid rgba(99,102,241,0.2);
+  padding: 0.3rem 0.9rem; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px;
+  text-transform: uppercase; margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: var(--font); font-size: clamp(2.4rem, 4vw, 3.6rem);
+  font-weight: 800; line-height: 1.08; color: var(--text);
+  margin-bottom: 1.2rem; letter-spacing: -1px;
+}
+.hero h1 .hl {
+  background: linear-gradient(135deg, var(--indigo), var(--violet));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 1rem; color: var(--muted); line-height: 1.7;
+  margin-bottom: 2rem; max-width: 440px;
+}
+.hero-form { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; }
+.hero-input {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 0.85rem 1.1rem;
+  font-family: var(--body); font-size: 0.95rem; color: var(--text);
+  outline: none; transition: all 0.2s; width: 100%;
+}
+.hero-input:focus { border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
+.hero-input::placeholder { color: var(--muted2); }
+
+.btn-start {
+  background: var(--indigo); color: white;
+  border: none; border-radius: 12px; padding: 0.85rem 2rem;
+  font-family: var(--font); font-size: 0.95rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  position: relative; overflow: hidden;
+}
+.btn-start::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.12) 100%);
+}
+.btn-start:hover { background: #4F46E5; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.35); }
+.btn-start:active { transform: translateY(0); }
+
+.hero-stats { display: flex; gap: 2rem; }
+.hstat { }
+.hstat-num { font-family: var(--font); font-size: 1.4rem; font-weight: 800; color: var(--text); }
+.hstat-label { font-size: 0.75rem; color: var(--muted); }
+
+/* Hero right — floating cards */
+.hero-visual { position: relative; height: 420px; }
+.float-card {
+  position: absolute; background: var(--white);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 1rem 1.2rem;
+  font-size: 0.82rem; transition: transform 0.3s;
+}
+.float-card:hover { transform: translateY(-4px) !important; }
+.fc-1 { top: 20px; left: 10px; width: 200px; animation: fc1 6s ease-in-out infinite; }
+.fc-2 { top: 60px; right: 0; width: 190px; animation: fc2 7s ease-in-out infinite; }
+.fc-3 { bottom: 80px; left: 20px; width: 210px; animation: fc3 5.5s ease-in-out infinite; }
+.fc-4 { bottom: 40px; right: 20px; width: 180px; animation: fc1 6.5s ease-in-out infinite reverse; }
+@keyframes fc1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes fc2 { 0%,100%{transform:translateY(-6px)} 50%{transform:translateY(4px)} }
+@keyframes fc3 { 0%,100%{transform:translateY(4px)} 50%{transform:translateY(-8px)} }
+.fc-label { font-size: 0.68rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+.fc-val { font-family: var(--font); font-weight: 700; color: var(--text); font-size: 0.9rem; }
+.fc-sub { font-size: 0.72rem; color: var(--muted); margin-top: 0.2rem; }
+.fc-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 0.3rem; }
+
+/* ══════════════════════════════════════
+   QUIZ PAGE
+══════════════════════════════════════ */
+.quiz-wrap {
+  max-width: 680px; margin: 0 auto; padding: 3rem 2rem;
+}
+.quiz-header { text-align: center; margin-bottom: 2.5rem; }
+.quiz-title { font-family: var(--font); font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.3rem; }
+.quiz-sub { font-size: 0.82rem; color: var(--muted); }
+
+/* Progress bar */
+.progress-wrap { margin-bottom: 2rem; }
+.progress-meta {
+  display: flex; justify-content: space-between;
+  font-size: 0.75rem; font-weight: 600; color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+.progress-track {
+  height: 6px; background: var(--surface2); border-radius: 100px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; border-radius: 100px;
+  background: linear-gradient(90deg, var(--indigo), var(--violet));
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Question card */
+.q-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 20px; padding: 2rem;
+  box-shadow: var(--shadow);
+  animation: cardSwitch 0.35s ease both;
+}
+@keyframes cardSwitch { from{opacity:0;transform:translateX(20px)} to{opacity:1;transform:translateX(0)} }
+
+.q-num { font-size: 0.72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.8rem; }
+.q-text { font-family: var(--font); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 1.5rem; line-height: 1.35; }
+
+.q-options { display: flex; flex-direction: column; gap: 0.7rem; }
+.q-opt {
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 0.9rem 1.1rem;
+  cursor: pointer; transition: all 0.2s;
+  font-size: 0.9rem; color: var(--text2);
+  display: flex; align-items: center; gap: 0.7rem;
+  font-family: var(--body); font-weight: 500;
+  text-align: left;
+}
+.q-opt:hover { border-color: var(--indigo); background: var(--indigo-bg); color: var(--indigo); transform: translateX(4px); }
+.q-opt.selected { border-color: var(--indigo); background: var(--indigo-bg); color: var(--indigo); }
+.q-opt-key {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--surface2); color: var(--muted);
+  font-size: 0.72rem; font-weight: 800; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.q-opt.selected .q-opt-key, .q-opt:hover .q-opt-key {
+  background: var(--indigo); color: white;
+}
+.q-nav { display: flex; gap: 0.8rem; margin-top: 1.5rem; }
+.btn-nav {
+  flex: 1; padding: 0.8rem; border-radius: 12px;
+  font-family: var(--font); font-size: 0.88rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; border: none;
+}
+.btn-prev { background: var(--surface); color: var(--text2); }
+.btn-prev:hover { background: var(--surface2); }
+.btn-next { background: var(--indigo); color: white; }
+.btn-next:hover { background: #4F46E5; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(99,102,241,0.3); }
+.btn-next:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* ══════════════════════════════════════
+   LOADING STATE
+══════════════════════════════════════ */
+.loading-screen {
+  display: none; position: fixed; inset: 0;
+  background: rgba(250,250,250,0.95); backdrop-filter: blur(8px);
+  z-index: 999; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1.5rem;
+}
+.loading-screen.visible { display: flex; }
+.load-spinner {
+  width: 52px; height: 52px;
+  border: 3px solid var(--border2);
+  border-top-color: var(--indigo);
+  border-radius: 50%; animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.load-title { font-family: var(--font); font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.load-sub { font-size: 0.82rem; color: var(--muted); animation: ellipsis 1.5s steps(4) infinite; }
+@keyframes ellipsis { 0%{content:"Menganalisis"} 33%{content:"Menganalisis."} 66%{content:"Menganalisis.."} 100%{content:"Menganalisis..."} }
+
+/* ══════════════════════════════════════
+   RESULT PAGE
+══════════════════════════════════════ */
+.result-wrap { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+
+/* AI Summary box */
+.ai-summary {
+  background: linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: 20px; padding: 1.8rem 2rem;
+  margin-bottom: 2rem; position: relative; overflow: hidden;
+}
+.ai-summary::before {
+  content: ''; position: absolute; top: -40%; right: -10%;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(99,102,241,0.08), transparent);
+  pointer-events: none;
+}
+.ais-tag {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: white; border: 1px solid rgba(99,102,241,0.2);
+  color: var(--indigo); padding: 0.25rem 0.7rem;
+  border-radius: 100px; font-size: 0.68rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem;
+}
+.ais-text { font-size: 0.95rem; color: var(--text2); line-height: 1.65; font-weight: 500; margin-bottom: 0.6rem; }
+.ais-motivasi { font-family: var(--font); font-size: 1.05rem; font-weight: 700; color: var(--indigo); }
+.ais-warning {
+  display: flex; align-items: flex-start; gap: 0.5rem;
+  background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+  border-radius: 10px; padding: 0.7rem 1rem; margin-top: 0.8rem;
+  font-size: 0.82rem; color: #92400E;
+}
+
+/* Result section title */
+.result-section-title {
+  font-family: var(--font); font-size: 1.3rem; font-weight: 800;
+  color: var(--text); margin-bottom: 1.2rem;
+}
+
+/* Jurusan cards */
+.jurusan-cards { display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 2.5rem; }
+.jurusan-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-sm);
+  transition: all 0.3s; cursor: pointer;
+}
+.jurusan-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+.jurusan-card.expanded { box-shadow: var(--shadow-lg); }
+
+.jc-header {
+  padding: 1.5rem 1.8rem;
+  display: flex; align-items: center; gap: 1.2rem;
+}
+.jc-rank {
+  font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+  color: var(--muted2); flex-shrink: 0; width: 20px;
+}
+.jc-emoji-wrap {
+  width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.jc-info { flex: 1; }
+.jc-nama { font-family: var(--font); font-size: 1.05rem; font-weight: 800; color: var(--text); margin-bottom: 0.15rem; }
+.jc-fakultas { font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+.jc-scores { display: flex; gap: 1.2rem; flex-shrink: 0; }
+.jc-score { text-align: right; }
+.jcs-val { font-family: var(--mono); font-size: 0.95rem; font-weight: 700; }
+.jcs-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.3px; }
+.jc-chevron { color: var(--muted2); font-size: 1rem; transition: transform 0.3s; }
+.jurusan-card.expanded .jc-chevron { transform: rotate(180deg); }
+
+/* Match bar */
+.jc-match { padding: 0 1.8rem 1rem; }
+.match-track { height: 4px; background: var(--surface2); border-radius: 100px; overflow: hidden; }
+.match-fill { height: 100%; border-radius: 100px; transition: width 1s cubic-bezier(0.4,0,0.2,1); }
+
+/* Expanded content */
+.jc-body { display: none; padding: 0 1.8rem 1.8rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+.jurusan-card.expanded .jc-body { display: block; animation: fadeUp 0.3s ease both; }
+
+.jc-section-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 0.8rem; }
+.jc-section { margin-bottom: 1.4rem; }
+
+/* Cocok untuk */
+.cocok-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.cocok-item {
+  background: var(--surface); border-radius: 100px;
+  padding: 0.3rem 0.8rem; font-size: 0.78rem; font-weight: 500; color: var(--text2);
+}
+
+/* Prospek kerja */
+.prospek-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+.prospek-item {
+  background: var(--surface); border-radius: 12px; padding: 0.9rem;
+}
+.pi-posisi { font-weight: 700; font-size: 0.82rem; color: var(--text); margin-bottom: 0.4rem; }
+.pi-gaji { font-family: var(--mono); font-size: 0.75rem; color: var(--emerald); font-weight: 600; }
+.pi-demand { font-size: 0.68rem; margin-top: 0.2rem; }
+.pi-demand.sangat-tinggi { color: var(--emerald); }
+.pi-demand.tinggi { color: var(--amber); }
+.pi-demand.sedang { color: var(--muted); }
+
+/* Roadmap */
+.roadmap-list { display: flex; flex-direction: column; gap: 0; }
+.roadmap-item { display: flex; gap: 1rem; position: relative; }
+.roadmap-item::before {
+  content: ''; position: absolute; left: 15px; top: 32px; bottom: -8px;
+  width: 1px; background: var(--border);
+}
+.roadmap-item:last-child::before { display: none; }
+.rm-dot {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 800; font-family: var(--mono);
+  border: 2px solid var(--border); background: var(--white); color: var(--muted);
+  transition: all 0.2s; margin-top: 2px;
+}
+.roadmap-item:nth-child(1) .rm-dot { border-color: var(--indigo); color: var(--indigo); }
+.roadmap-item:nth-child(2) .rm-dot { border-color: var(--violet); color: var(--violet); }
+.roadmap-item:nth-child(3) .rm-dot { border-color: var(--emerald); color: var(--emerald); }
+.roadmap-item:nth-child(4) .rm-dot { border-color: var(--amber); color: var(--amber); }
+.rm-content { padding-bottom: 1.2rem; }
+.rm-tahap { font-size: 0.72rem; font-weight: 700; color: var(--muted); margin-bottom: 0.2rem; }
+.rm-fokus { font-size: 0.85rem; color: var(--text2); line-height: 1.5; }
+
+/* Skills */
+.skill-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-item {
+  background: var(--indigo-bg); color: var(--indigo);
+  border: 1px solid rgba(99,102,241,0.15);
+  border-radius: 8px; padding: 0.3rem 0.7rem;
+  font-size: 0.78rem; font-weight: 600; font-family: var(--mono);
+}
+
+/* Uni */
+.uni-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.uni-item {
+  background: var(--surface); border-radius: 8px;
+  padding: 0.3rem 0.8rem; font-size: 0.78rem; font-weight: 600; color: var(--text2);
+}
+
+/* ══════════════════════════════════════
+   EXPLORE PAGE — all jurusan
+══════════════════════════════════════ */
+.explore-wrap { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+.explore-header { margin-bottom: 2rem; }
+.explore-title { font-family: var(--font); font-size: 1.8rem; font-weight: 800; color: var(--text); margin-bottom: 0.4rem; }
+.explore-sub { font-size: 0.9rem; color: var(--muted); }
+
+.explore-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.explore-card {
+  background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 18px; padding: 1.5rem; cursor: pointer;
+  transition: all 0.25s; box-shadow: var(--shadow-sm);
+}
+.explore-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--border2); }
+.ec-emoji { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+.ec-nama { font-family: var(--font); font-size: 0.95rem; font-weight: 800; color: var(--text); margin-bottom: 0.2rem; }
+.ec-fak { font-size: 0.75rem; color: var(--muted); margin-bottom: 0.8rem; }
+.ec-gaji { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; margin-bottom: 0.4rem; }
+.ec-gaji-val { font-family: var(--mono); font-weight: 700; color: var(--emerald); }
+.ec-bar-wrap { margin-top: 0.8rem; }
+.ec-bar-label { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--muted); margin-bottom: 0.3rem; }
+.ec-bar-track { height: 4px; background: var(--surface2); border-radius: 100px; overflow: hidden; }
+.ec-bar-fill { height: 100%; border-radius: 100px; transition: width 1s ease; }
+
+/* ══════════════════════════════════════
+   CHAT PAGE
+══════════════════════════════════════ */
+.chat-wrap {
+  max-width: 720px; margin: 0 auto; padding: 2rem 2rem 0;
+  display: flex; flex-direction: column; height: calc(100vh - 60px);
+}
+.chat-header { padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; }
+.chat-title { font-family: var(--font); font-size: 1.2rem; font-weight: 800; color: var(--text); }
+.chat-sub { font-size: 0.82rem; color: var(--muted); }
+
+.chat-msgs { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 1rem; padding-bottom: 1rem; }
+.chat-msgs::-webkit-scrollbar { width: 4px; }
+.chat-msgs::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+.cmsg { max-width: 78%; animation: fadeUp 0.3s ease both; }
+.cmsg.user { align-self: flex-end; }
+.cmsg.ai { align-self: flex-start; }
+.cmsg-sender { font-size: 0.68rem; font-weight: 700; color: var(--muted); margin-bottom: 0.3rem; }
+.cmsg-bubble { padding: 0.85rem 1.1rem; border-radius: 16px; font-size: 0.88rem; line-height: 1.6; font-weight: 400; }
+.cmsg.user .cmsg-bubble { background: var(--indigo); color: white; border-bottom-right-radius: 4px; }
+.cmsg.ai .cmsg-bubble { background: var(--white); border: 1px solid var(--border); color: var(--text2); border-bottom-left-radius: 4px; box-shadow: var(--shadow-sm); }
+
+.typing-row { display: none; align-items: center; gap: 0.5rem; padding: 0.3rem 0; }
+.typing-row.visible { display: flex; }
+.tdots { display: flex; gap: 0.25rem; }
+.tdot { width: 5px; height: 5px; background: var(--muted2); border-radius: 50%; animation: tdot 1.2s ease-in-out infinite; }
+.tdot:nth-child(2) { animation-delay: 0.2s; }
+.tdot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes tdot { 0%,100%{transform:translateY(0);opacity:0.4} 50%{transform:translateY(-4px);opacity:1} }
+.typing-label { font-size: 0.72rem; color: var(--muted); }
+
+.chat-input-wrap { border-top: 1px solid var(--border); padding: 1rem 0 1.5rem; }
+.chat-starter-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.8rem; }
+.chip {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 100px; padding: 0.4rem 0.9rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--text2);
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.chip:hover { background: var(--indigo-bg); color: var(--indigo); border-color: rgba(99,102,241,0.2); }
+.chat-row { display: flex; gap: 0.7rem; }
+.chat-input {
+  flex: 1; background: var(--white); border: 1.5px solid var(--border);
+  border-radius: 12px; padding: 0.8rem 1rem;
+  color: var(--text); font-family: var(--body); font-size: 0.88rem;
+  outline: none; resize: none; height: 50px; font-weight: 400;
+  transition: border-color 0.2s;
+}
+.chat-input:focus { border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(99,102,241,0.08); }
+.chat-send {
+  background: var(--indigo); color: white; border: none;
+  border-radius: 12px; padding: 0 1.2rem; cursor: pointer; font-size: 1rem;
+  transition: all 0.2s;
+}
+.chat-send:hover { background: #4F46E5; transform: scale(1.05); }
+
+/* ══════════════════════════════════════
+   DETAIL MODAL
+══════════════════════════════════════ */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+  z-index: 200; align-items: center; justify-content: center; padding: 2rem;
+}
+.modal-overlay.visible { display: flex; }
+.modal {
+  background: var(--white); border-radius: 24px;
+  max-width: 600px; width: 100%; max-height: 85vh; overflow-y: auto;
+  box-shadow: var(--shadow-lg); animation: modalIn 0.3s ease both;
+}
+@keyframes modalIn { from{opacity:0;transform:scale(0.95)} to{opacity:1;transform:scale(1)} }
+.modal-header { padding: 1.8rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; }
+.modal-title { font-family: var(--font); font-size: 1.2rem; font-weight: 800; color: var(--text); }
+.modal-close { background: var(--surface); border: none; border-radius: 8px; width: 32px; height: 32px; cursor: pointer; font-size: 1rem; color: var(--muted); transition: all 0.2s; }
+.modal-close:hover { background: var(--surface2); }
+.modal-body { padding: 1.8rem; }
+
+/* Responsive */
+@media(max-width: 768px) {
+  .hero { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-visual { display: none; }
+  .explore-grid { grid-template-columns: 1fr 1fr; }
+  .prospek-grid { grid-template-columns: 1fr 1fr; }
+  .hero h1 { font-size: 2.2rem; }
+  .navbar { padding: 0 1rem; }
+  .nav-tab span { display: none; }
+}
+@media(max-width: 480px) {
+  .explore-grid { grid-template-columns: 1fr; }
+  .prospek-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="load-spinner"></div>
+  <div class="load-title">AI lagi mikirin masa depanmu...</div>
+  <div class="load-sub">Menganalisis minat & kepribadian</div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a class="nav-brand" href="#" onclick="gotoPage('landing'); return false;">
+    <div class="nav-brand-dot"></div>PathFinder
+  </a>
+  <div class="nav-tabs">
+    <button class="nav-tab active" id="nt-landing" onclick="gotoPage('landing')">🏠 <span>Home</span></button>
+    <button class="nav-tab" id="nt-quiz" onclick="gotoPage('quiz')">🎯 <span>Tes Minat</span></button>
+    <button class="nav-tab" id="nt-result" onclick="gotoPage('result')" id="ntResult">📊 <span>Hasil</span></button>
+    <button class="nav-tab" id="nt-explore" onclick="gotoPage('explore')">🔍 <span>Explore</span></button>
+    <button class="nav-tab" id="nt-chat" onclick="gotoPage('chat')">💬 <span>Tanya AI</span></button>
+  </div>
+</nav>
+
+<!-- ══ LANDING PAGE ══ -->
+<div class="page active" id="pg-landing">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">✨ AI-Powered Career Guide</div>
+      <h1>Temukan<br><span class="hl">Jurusan</span><br>yang Tepat</h1>
+      <p class="hero-desc">Quiz 8 pertanyaan — AI analisis kepribadian dan minatmu, lalu kasih rekomendasi jurusan kuliah lengkap dengan prospek karir dan gaji nyata.</p>
+      <div class="hero-form">
+        <input type="text" class="hero-input" id="heroNama" placeholder="Siapa namamu? (opsional)">
+      </div>
+      <button class="btn-start" onclick="startQuiz()">
+        Mulai Tes Sekarang →
+      </button>
+      <div class="hero-stats" style="margin-top:2rem;">
+        <div class="hstat"><div class="hstat-num">8</div><div class="hstat-label">Pertanyaan</div></div>
+        <div class="hstat"><div class="hstat-num">6</div><div class="hstat-label">Jurusan dianalisis</div></div>
+        <div class="hstat"><div class="hstat-num">AI</div><div class="hstat-label">Analisis personal</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="float-card fc-1">
+        <div class="fc-label">💻 Teknik Informatika</div>
+        <div class="fc-val">Gaji awal ~Rp 11 jt</div>
+        <div class="fc-sub"><div class="fc-dot" style="background:#6366F1"></div>Growth 95/100</div>
+      </div>
+      <div class="float-card fc-2">
+        <div class="fc-label">🎨 DKV</div>
+        <div class="fc-val">UI/UX Designer</div>
+        <div class="fc-sub"><div class="fc-dot" style="background:#F59E0B"></div>Demand: Sangat Tinggi</div>
+      </div>
+      <div class="float-card fc-3">
+        <div class="fc-label">📈 Manajemen Bisnis</div>
+        <div class="fc-val">Product Manager</div>
+        <div class="fc-sub"><div class="fc-dot" style="background:#10B981"></div>Rp 30-65 jt/bulan senior</div>
+      </div>
+      <div class="float-card fc-4">
+        <div class="fc-label">🧠 Psikologi</div>
+        <div class="fc-val">UX Researcher</div>
+        <div class="fc-sub"><div class="fc-dot" style="background:#8B5CF6"></div>Happiness 90/100</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUIZ PAGE ══ -->
+<div class="page" id="pg-quiz">
+  <div class="quiz-wrap">
+    <div class="quiz-header">
+      <div class="quiz-title" id="quizGreeting">Yuk, cari tahu jurusan terbaikmu!</div>
+      <div class="quiz-sub">Pilih jawaban yang paling menggambarkan dirimu — tidak ada yang salah.</div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-meta">
+        <span id="progressText">Pertanyaan 1 dari 8</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    </div>
+    <div class="q-card" id="questionCard">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ══ RESULT PAGE ══ -->
+<div class="page" id="pg-result">
+  <div class="result-wrap" id="resultContent">
+    <div style="text-align:center;padding:4rem;color:var(--muted);">
+      <div style="font-size:2rem;margin-bottom:1rem;">🎯</div>
+      <div style="font-family:var(--font);font-weight:700;margin-bottom:0.5rem;">Belum ada hasil</div>
+      <div style="font-size:0.85rem;">Kerjakan tes minat dulu ya!</div>
+      <button onclick="gotoPage('quiz')" style="margin-top:1.5rem;background:var(--indigo);color:white;border:none;padding:0.7rem 1.5rem;border-radius:10px;font-weight:700;cursor:pointer;font-family:var(--body);">Mulai Tes →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ EXPLORE PAGE ══ -->
+<div class="page" id="pg-explore">
+  <div class="explore-wrap">
+    <div class="explore-header">
+      <div class="explore-title">Explore Semua Jurusan</div>
+      <div class="explore-sub">Klik jurusan untuk lihat detail prospek kerja, gaji, dan roadmap karir lengkap.</div>
+    </div>
+    <div class="explore-grid" id="exploreGrid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ══ CHAT PAGE ══ -->
+<div class="page" id="pg-chat">
+  <div class="chat-wrap">
+    <div class="chat-header">
+      <div class="chat-title">💬 Tanya PathFinder AI</div>
+      <div class="chat-sub">Konselor karir AI — tanya apapun soal jurusan, kampus, atau karir impianmu.</div>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="cmsg ai">
+        <div class="cmsg-sender">🧭 PathFinder AI</div>
+        <div class="cmsg-bubble">Halo! Aku PathFinder AI, siap bantu kamu nemuin jurusan dan karir yang tepat 🚀<br><br>Mau tanya soal jurusan apa, prospek kerja mana, atau bingung milih antara dua jurusan? Cerita aja!</div>
+      </div>
+    </div>
+    <div class="typing-row" id="typingRow">
+      <div class="tdots"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>
+      <div class="typing-label">PathFinder AI sedang mengetik...</div>
+    </div>
+    <div class="chat-input-wrap">
+      <div class="chat-starter-chips" id="starterChips">
+        <div class="chip" onclick="sendChip(this)">🤔 Aku masih bingung milih jurusan</div>
+        <div class="chip" onclick="sendChip(this)">💰 Jurusan mana yang gajinya paling tinggi?</div>
+        <div class="chip" onclick="sendChip(this)">🏫 Kampus terbaik untuk Teknik Informatika?</div>
+        <div class="chip" onclick="sendChip(this)">📚 Susah gak masuk Kedokteran?</div>
+        <div class="chip" onclick="sendChip(this)">🎨 Prospek kerja jurusan DKV gimana?</div>
+      </div>
+      <div class="chat-row">
+        <textarea class="chat-input" id="chatInput" placeholder="Tanya soal jurusan, kampus, karir..."></textarea>
+        <button class="chat-send" onclick="sendChat()">→</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+/* ══════════════════════════════════════
+   STATE
+══════════════════════════════════════ */
+const STATE = {
+  nama: '',
+  currentQ: 0,
+  jawaban: [],   // [{pertanyaan_id, opsi_index}]
+  hasil: null,
+  chatHistory: [],
+  chatCtx: '',
+};
+
+const SOAL = {{ pertanyaan | tojson }};
+
+/* ══════════════════════════════════════
+   NAVIGATION
+══════════════════════════════════════ */
+function gotoPage(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('pg-' + page).classList.add('active');
+  document.getElementById('nt-' + page)?.classList.add('active');
+}
+
+/* ══════════════════════════════════════
+   QUIZ
+══════════════════════════════════════ */
+function startQuiz() {
+  STATE.nama  = document.getElementById('heroNama').value.trim() || 'Kamu';
+  STATE.currentQ = 0;
+  STATE.jawaban  = [];
+  if (STATE.nama !== 'Kamu') {
+    document.getElementById('quizGreeting').textContent = `Halo ${STATE.nama}! Yuk cari tahu jurusanmu 🎯`;
+  }
+  renderQuestion();
+  gotoPage('quiz');
+}
+
+function renderQuestion() {
+  const q   = SOAL[STATE.currentQ];
+  const idx = STATE.currentQ;
+  const total = SOAL.length;
+  const pct  = Math.round((idx / total) * 100);
+
+  document.getElementById('progressText').textContent = `Pertanyaan ${idx + 1} dari ${total}`;
+  document.getElementById('progressPct').textContent  = pct + '%';
+  document.getElementById('progressFill').style.width = pct + '%';
+
+  const saved = STATE.jawaban.find(j => j.pertanyaan_id === q.id);
+  const selIdx = saved ? saved.opsi_index : -1;
+
+  const keys = ['A','B','C','D'];
+  const optsHtml = q.opsi.map((o, i) => `
+    <button class="q-opt ${i === selIdx ? 'selected' : ''}" onclick="pilihOpsi(${i})">
+      <div class="q-opt-key">${keys[i]}</div>
+      <span>${o.teks}</span>
+    </button>`).join('');
+
+  document.getElementById('questionCard').innerHTML = `
+    <div class="q-num">Pertanyaan ${idx + 1}</div>
+    <div class="q-text">${q.pertanyaan}</div>
+    <div class="q-options">${optsHtml}</div>
+    <div class="q-nav">
+      ${idx > 0 ? `<button class="btn-nav btn-prev" onclick="prevQ()">← Sebelumnya</button>` : '<div></div>'}
+      <button class="btn-nav btn-next" id="btnNext" onclick="nextQ()" ${selIdx === -1 ? 'disabled' : ''}>
+        ${idx === total - 1 ? 'Lihat Hasil ✨' : 'Selanjutnya →'}
+      </button>
+    </div>`;
+}
+
+function pilihOpsi(optIdx) {
+  const q = SOAL[STATE.currentQ];
+  const existing = STATE.jawaban.findIndex(j => j.pertanyaan_id === q.id);
+  if (existing >= 0) STATE.jawaban[existing].opsi_index = optIdx;
+  else STATE.jawaban.push({ pertanyaan_id: q.id, opsi_index: optIdx });
+
+  document.querySelectorAll('.q-opt').forEach((el, i) => {
+    el.classList.toggle('selected', i === optIdx);
+  });
+  document.getElementById('btnNext').disabled = false;
+
+  // Auto-advance after 400ms
+  setTimeout(() => { nextQ(); }, 380);
+}
+
+function nextQ() {
+  const q = SOAL[STATE.currentQ];
+  if (!STATE.jawaban.find(j => j.pertanyaan_id === q.id)) return;
+  if (STATE.currentQ < SOAL.length - 1) {
+    STATE.currentQ++;
+    document.getElementById('questionCard').style.animation = 'none';
+    document.getElementById('questionCard').offsetHeight;
+    renderQuestion();
+  } else {
+    submitQuiz();
+  }
+}
+
+function prevQ() {
+  if (STATE.currentQ > 0) {
+    STATE.currentQ--;
+    renderQuestion();
+  }
+}
+
+async function submitQuiz() {
+  document.getElementById('loadingScreen').classList.add('visible');
+  try {
+    const res = await fetch('/api/quiz-result', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ jawaban: STATE.jawaban, nama: STATE.nama })
+    });
+    const j = await res.json();
+    if (j.success) {
+      STATE.hasil  = j;
+      STATE.chatCtx = `Nama: ${j.nama}, Rekomendasi jurusan: ${j.hasil.map(h=>h.nama).join(', ')}`;
+      renderResult(j);
+      gotoPage('result');
+    } else alert('Error: ' + (j.error || 'Coba lagi'));
+  } catch(e) { alert('Gagal menghubungi server: ' + e.message); }
+  finally { document.getElementById('loadingScreen').classList.remove('visible'); }
+}
+
+/* ══════════════════════════════════════
+   RENDER RESULT
+══════════════════════════════════════ */
+function renderResult(data) {
+  const { hasil, ai, nama } = data;
+  const warna = hasil[0]?.warna || '#6366F1';
+
+  let html = `
+    <div style="margin-bottom:1.5rem;">
+      <div style="font-family:var(--font);font-size:2rem;font-weight:800;color:var(--text);margin-bottom:0.3rem;">
+        Hai ${nama}! 👋
+      </div>
+      <div style="font-size:1rem;color:var(--muted);">Ini hasil analisis minat dan kepribadianmu</div>
+    </div>
+
+    <div class="ai-summary">
+      <div class="ais-tag">🤖 Analisis AI Personal</div>
+      <div class="ais-text">${ai.analisis}</div>
+      <div class="ais-motivasi">"${ai.motivasi}"</div>
+      <div class="ais-warning">
+        <span>⚠️</span>
+        <span>${ai.warning}</span>
+      </div>
+    </div>
+
+    <div class="result-section-title">🎯 Top Rekomendasi Jurusanmu</div>
+    <div class="jurusan-cards">`;
+
+  hasil.forEach((h, i) => {
+    const rankLabels = ['🥇 #1 Terbaik', '🥈 #2 Alternatif', '🥉 #3 Pilihan Lain'];
+    const rank = rankLabels[i] || `#${i+1}`;
+    const scoreColor = i === 0 ? h.warna : 'var(--muted)';
+
+    html += `
+      <div class="jurusan-card" id="jcard-${i}" onclick="toggleCard(${i})">
+        <div class="jc-header">
+          <div class="jc-rank">${i+1}</div>
+          <div class="jc-emoji-wrap" style="background:${h.warna}18;">${h.emoji}</div>
+          <div class="jc-info">
+            <div class="jc-nama">${h.nama}</div>
+            <div class="jc-fakultas">${h.fakultas} · ${rank}</div>
+          </div>
+          <div class="jc-scores">
+            <div class="jc-score">
+              <div class="jcs-val" style="color:${scoreColor}">${h.skor_persen}%</div>
+              <div class="jcs-label">Match</div>
+            </div>
+            <div class="jc-score">
+              <div class="jcs-val" style="color:var(--emerald)">Rp${h.rata_gaji_awal}jt</div>
+              <div class="jcs-label">Gaji Awal</div>
+            </div>
+          </div>
+          <div class="jc-chevron">▾</div>
+        </div>
+        <div class="jc-match">
+          <div class="match-track">
+            <div class="match-fill" style="width:0%;background:${h.warna}" data-w="${h.skor_persen}"></div>
+          </div>
+        </div>
+        <div class="jc-body">
+          <p style="font-size:0.88rem;color:var(--text2);line-height:1.6;margin-bottom:1.2rem;">${h.deskripsi}</p>
+
+          <div class="jc-section">
+            <div class="jc-section-title">✅ Kamu cocok kalau...</div>
+            <div class="cocok-list">${h.cocok_untuk.map(c=>`<span class="cocok-item">${c}</span>`).join('')}</div>
+          </div>
+
+          <div class="jc-section">
+            <div class="jc-section-title">💼 Prospek Karir & Gaji</div>
+            <div class="prospek-grid">${h.prospek_kerja.map(p=>`
+              <div class="prospek-item">
+                <div class="pi-posisi">${p.posisi}</div>
+                <div class="pi-gaji">Junior: ${p.gaji_junior}</div>
+                <div class="pi-gaji">Senior: ${p.gaji_senior}</div>
+                <div class="pi-demand ${p.demand.toLowerCase().replace(' ','-')}">● ${p.demand}</div>
+              </div>`).join('')}</div>
+          </div>
+
+          <div class="jc-section">
+            <div class="jc-section-title">🗺️ Roadmap Karir</div>
+            <div class="roadmap-list">${h.roadmap.map((r,ri)=>`
+              <div class="roadmap-item">
+                <div class="rm-dot">${ri+1}</div>
+                <div class="rm-content">
+                  <div class="rm-tahap">${r.tahap}</div>
+                  <div class="rm-fokus">${r.fokus}</div>
+                </div>
+              </div>`).join('')}</div>
+          </div>
+
+          <div class="jc-section">
+            <div class="jc-section-title">⚡ Skill yang Perlu Dikuasai</div>
+            <div class="skill-list">${h.skill_utama.map(s=>`<span class="skill-item">${s}</span>`).join('')}</div>
+          </div>
+
+          <div class="jc-section">
+            <div class="jc-section-title">🏫 Universitas Top</div>
+            <div class="uni-list">${h.universitas_top.map(u=>`<span class="uni-item">${u}</span>`).join('')}</div>
+          </div>
+        </div>
+      </div>`;
+  });
+
+  html += `</div>
+    <div style="text-align:center;padding:2rem 0;">
+      <button onclick="gotoPage('chat')" style="background:var(--indigo);color:white;border:none;padding:0.85rem 2rem;border-radius:12px;font-family:var(--font);font-size:0.95rem;font-weight:700;cursor:pointer;">
+        💬 Tanya AI untuk Info Lebih Lanjut
+      </button>
+      <button onclick="gotoPage('quiz');startQuiz()" style="background:var(--surface);color:var(--text);border:1px solid var(--border);padding:0.85rem 2rem;border-radius:12px;font-family:var(--font);font-size:0.95rem;font-weight:700;cursor:pointer;margin-left:0.8rem;">
+        🔄 Ulangi Tes
+      </button>
+    </div>`;
+
+  document.getElementById('resultContent').innerHTML = html;
+
+  // Animate match bars
+  setTimeout(() => {
+    document.querySelectorAll('.match-fill[data-w]').forEach(el => {
+      el.style.width = el.dataset.w + '%';
+    });
+    // Auto-expand first card
+    toggleCard(0);
+  }, 100);
+}
+
+function toggleCard(i) {
+  const card = document.getElementById('jcard-' + i);
+  const wasExpanded = card.classList.contains('expanded');
+  document.querySelectorAll('.jurusan-card').forEach(c => c.classList.remove('expanded'));
+  if (!wasExpanded) card.classList.add('expanded');
+}
+
+/* ══════════════════════════════════════
+   EXPLORE
+══════════════════════════════════════ */
+async function loadExplore() {
+  // Gunakan data yang sudah ada di SOAL untuk mendapatkan key jurusan
+  // Fetch dari semua key yang diketahui
+  const keys = ['teknik_informatika','desain_komunikasi_visual','psikologi','bisnis_manajemen','kedokteran','hukum'];
+  const colors = { teknik_informatika:'#6366F1', desain_komunikasi_visual:'#F59E0B', psikologi:'#8B5CF6', bisnis_manajemen:'#10B981', kedokteran:'#EF4444', hukum:'#0EA5E9' };
+
+  // Fetch detail semua jurusan
+  const results = await Promise.all(keys.map(k => fetch('/api/jurusan/'+k).then(r=>r.json())));
+
+  const grid = document.getElementById('exploreGrid');
+  grid.innerHTML = results.map((r, i) => {
+    if (!r.success) return '';
+    const j = r.data;
+    const c = colors[keys[i]] || '#6366F1';
+    return `
+      <div class="explore-card" onclick="openJurusanModal('${keys[i]}')">
+        <span class="ec-emoji">${j.emoji}</span>
+        <div class="ec-nama">${j.nama}</div>
+        <div class="ec-fak">${j.fakultas}</div>
+        <div class="ec-gaji">
+          <span class="ec-gaji-val">Rp ${j.rata_gaji_awal}jt</span>
+          <span style="color:var(--muted);font-size:0.72rem;">/ bulan (awal)</span>
+        </div>
+        <div class="ec-bar-wrap">
+          <div class="ec-bar-label"><span>Growth</span><span>${j.growth_score}/100</span></div>
+          <div class="ec-bar-track"><div class="ec-bar-fill" style="background:${c}" data-w="${j.growth_score}"></div></div>
+          <div class="ec-bar-label" style="margin-top:0.5rem;"><span>Happiness</span><span>${j.happiness_score}/100</span></div>
+          <div class="ec-bar-track"><div class="ec-bar-fill" style="background:${c}88" data-w="${j.happiness_score}"></div></div>
+        </div>
+      </div>`;
+  }).join('');
+
+  // Animate bars
+  setTimeout(() => {
+    document.querySelectorAll('.ec-bar-fill[data-w]').forEach(el => {
+      el.style.width = el.dataset.w + '%';
+    });
+  }, 100);
+}
+
+async function openJurusanModal(key) {
+  const res = await fetch('/api/jurusan/' + key);
+  const r   = await res.json();
+  if (!r.success) return;
+  const j = r.data;
+
+  document.getElementById('modalContent').innerHTML = `
+    <div class="modal-header">
+      <div>
+        <div style="font-size:1.8rem;margin-bottom:0.3rem;">${j.emoji}</div>
+        <div class="modal-title">${j.nama}</div>
+        <div style="font-size:0.78rem;color:var(--muted)">${j.fakultas}</div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p style="font-size:0.88rem;color:var(--text2);line-height:1.65;margin-bottom:1.5rem;">${j.deskripsi}</p>
+
+      <div class="jc-section-title" style="margin-bottom:0.8rem;">💼 Prospek Karir</div>
+      <div class="prospek-grid" style="margin-bottom:1.5rem;">${j.prospek_kerja.map(p=>`
+        <div class="prospek-item">
+          <div class="pi-posisi">${p.posisi}</div>
+          <div class="pi-gaji">Junior: ${p.gaji_junior}</div>
+          <div class="pi-gaji">Senior: ${p.gaji_senior}</div>
+          <div class="pi-demand ${p.demand.toLowerCase().replace(' ','-')}">● ${p.demand}</div>
+        </div>`).join('')}</div>
+
+      <div class="jc-section-title" style="margin-bottom:0.8rem;">🗺️ Roadmap</div>
+      <div class="roadmap-list" style="margin-bottom:1.5rem;">${j.roadmap.map((rm,ri)=>`
+        <div class="roadmap-item">
+          <div class="rm-dot">${ri+1}</div>
+          <div class="rm-content">
+            <div class="rm-tahap">${rm.tahap}</div>
+            <div class="rm-fokus">${rm.fokus}</div>
+          </div>
+        </div>`).join('')}</div>
+
+      <div class="jc-section-title" style="margin-bottom:0.8rem;">🏫 Universitas Top</div>
+      <div class="uni-list">${j.universitas_top.map(u=>`<span class="uni-item">${u}</span>`).join('')}</div>
+    </div>`;
+
+  document.getElementById('modalOverlay').classList.add('visible');
+}
+
+function closeModal(e) {
+  if (!e || e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('visible');
+  }
+}
+
+/* ══════════════════════════════════════
+   CHAT
+══════════════════════════════════════ */
+async function sendChat() {
+  const inp = document.getElementById('chatInput');
+  const msg = inp.value.trim(); if (!msg) return;
+  addMsg('user', msg); inp.value = '';
+  document.getElementById('starterChips').style.display = 'none';
+  STATE.chatHistory.push({ role:'user', content:msg });
+  document.getElementById('typingRow').classList.add('visible');
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ history: STATE.chatHistory, pesan: msg, konteks: STATE.chatCtx, nama: STATE.nama })
+    });
+    const j = await res.json();
+    document.getElementById('typingRow').classList.remove('visible');
+    const reply = j.success ? j.reply : 'Maaf, terjadi error.';
+    addMsg('ai', reply);
+    STATE.chatHistory.push({ role:'assistant', content:reply });
+  } catch(e) {
+    document.getElementById('typingRow').classList.remove('visible');
+    addMsg('ai', 'Tidak bisa konek ke server.');
+  }
+}
+
+function sendChip(el) {
+  document.getElementById('chatInput').value = el.textContent.replace(/^[^ ]+ /,'');
+  sendChat();
+}
+
+function addMsg(role, text) {
+  const d = document.createElement('div');
+  d.className = `cmsg ${role}`;
+  d.innerHTML = `<div class="cmsg-sender">${role==='ai'?'🧭 PathFinder AI':'👤 '+STATE.nama}</div><div class="cmsg-bubble">${text.replace(/\n/g,'<br>')}</div>`;
+  const c = document.getElementById('chatMsgs');
+  c.appendChild(d); c.scrollTop = c.scrollHeight;
+}
+
+document.getElementById('chatInput').addEventListener('keydown', e => {
+  if (e.key==='Enter' && !e.shiftKey) { e.preventDefault(); sendChat(); }
+});
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+// Override nav tab untuk trigger explore load
+const origGotoPage = gotoPage;
+document.getElementById('nt-explore').onclick = () => { gotoPage('explore'); loadExplore(); };
+</script>
+</body>
+</html>
